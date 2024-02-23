@@ -1,0 +1,114 @@
+.galleryButtonText {
+  flex: 1;
+  position: relative;
+  font-size: var(--font-xsmall);
+  font-weight: 600;
+  font-family: var(--font-inter);
+  color: #fff;
+  text-align: left;
+}
+
+.galleryButton {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padd-15);
+  background-color: #cf2e2e;
+  align-self: stretch;
+  border-radius: var(--br-12);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: var(--pixel-250);
+}
+
+.productsButtonText {
+  position: relative;
+  font-size: var(--font-xsmall);
+  font-weight: 600;
+  font-family: var(--font-sand);
+  color: #fff;
+  text-align: left;
+}
+
+.productsButton {
+  cursor: pointer;
+  border: 1px solid #fff;
+  padding: var(--padd-0x15);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: var(--br-12);
+  box-sizing: border-box;
+  height: 42px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.lgButtonHollowText {
+  position: relative;
+  font-size: var(--font-xsmall);
+  font-weight: 600;
+  font-family: var(--font-sand);
+  color: #cf2e2e;
+  text-align: left;
+}
+
+.arrowIcon {
+  width: var(--pixel-18);
+  position: relative;
+  height: 15px;
+}
+
+.lgButtonHollow {
+  cursor: pointer;
+  border: 1px solid #cf2e2e;
+  padding: var(--padd-0x20);
+  background-color: transparent;
+  border-radius: var(--br-12);
+  box-sizing: border-box;
+  height: var(--pixel-50);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0 var(--pixel-15);
+}
+
+.lgButtonText {
+  position: relative;
+  font-size: var(--font-xsmall);
+  font-weight: 600;
+  font-family: var(--font-sand);
+  color: #fff;
+  text-align: left;
+}
+
+.lgButton {
+  cursor: pointer;
+  border: 1px solid #cf2e2e;
+  padding: var(--padd-0x20);
+  background-color: #cf2e2e;
+  border-radius: var(--br-12);
+  height: var(--pixel-50);
+  flex-direction: row;
+}
+
+.lgButton,
+.smButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.smButton {
+  cursor: pointer;
+  border: 1px solid #cf2e2e;
+  padding: var(--padd-0x15);
+  background-color: #cf2e2e;
+  border-radius: var(--br-12);
+  height: 42px;
+  flex-direction: row;
+}

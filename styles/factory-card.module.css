@@ -1,0 +1,53 @@
+.factoryCardImage {
+  flex: 1;
+  border-radius: var(--br-20);
+  height: var(--pixel-232);
+  overflow: hidden;
+  min-width: var(--pixel-300);
+}
+
+.factoryCardDesc,
+.factoryCardTitle {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+}
+
+.factoryCardTitle {
+  font-size: inherit;
+  font-weight: 600;
+  font-family: inherit;
+}
+
+.factoryCardDesc {
+  font-weight: 500;
+  color: rgba(83, 50, 54, 0.8);
+}
+
+.factoryCardHeading {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--pixel-15) 0;
+  min-width: var(--pixel-300);
+}
+
+.factoryCard {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  border-radius: var(--br-50);
+  background-color: rgba(207, 46, 46, 0.05);
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: var(--padd-30);
+  gap: var(--pixel-30);
+  text-align: left;
+  font-size: var(--font-small);
+  color: #533236;
+  font-family: var(--font-sand);
+}

@@ -1,0 +1,56 @@
+.starIcon {
+  width: auto;
+  position: relative;
+  height: var(--pixel-36);
+}
+
+.featureCardTop {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padd-10);
+}
+
+.featureCardText {
+  margin: 0;
+  flex: 1;
+  position: relative;
+  font-size: inherit;
+  font-weight: 500;
+  font-family: inherit;
+}
+
+.featureCardDesc {
+  align-self: stretch;
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padd-10);
+}
+
+.featureCard {
+  overflow: hidden;
+  display: flex;
+  box-sizing: border-box;
+  flex: 1;
+  border-radius: var(--br-20);
+  background-color: rgba(255, 255, 255, 0.1);
+  height: var(--pixel-210);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padd-20);
+  gap: var(--pixel-20) 0;
+  min-width: 320px;
+  max-width: var(--pixel-350);
+  text-align: left;
+  font-size: var(--font-small);
+  color: #fff;
+  font-family: var(--font-sand);
+}

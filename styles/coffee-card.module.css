@@ -1,0 +1,30 @@
+.coffeeCardImage {
+  align-self: stretch;
+  border-radius: var(--br-20);
+  height: var(--pixel-232);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.coffeeCardText {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: inherit;
+  font-weight: 600;
+  font-family: inherit;
+}
+
+.coffeeCard {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--pixel-15) 0;
+  min-width: var(--pixel-200);
+  text-align: center;
+  font-size: var(--font-small);
+  color: #533236;
+  font-family: var(--font-sand);
+}

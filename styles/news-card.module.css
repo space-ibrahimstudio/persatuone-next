@@ -1,0 +1,123 @@
+.newsCardDateText {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 600;
+  font-family: inherit;
+}
+
+.newsCardDate {
+  color: #fff;
+  border-radius: var(--br-12);
+  background-color: #cf2e2e;
+  border: 1px solid #cf2e2e;
+  box-sizing: border-box;
+  height: 42px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padd-0x15);
+  z-index: 0;
+}
+
+.newsCardImage,
+.newsCardTitle {
+  align-self: stretch;
+  overflow: hidden;
+}
+
+.newsCardImage {
+  position: relative;
+  border-radius: var(--br-20);
+  height: var(--pixel-250);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: var(--padd-15);
+  box-sizing: border-box;
+}
+
+.newsCardTitle {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 600;
+  font-family: inherit;
+  display: -webkit-inline-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.newsCardHeading {
+  align-self: stretch;
+  flex: 1;
+  overflow: hidden;
+}
+
+.newsCardDesc {
+  align-self: stretch;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+  font-size: var(--font-small);
+  font-weight: 600;
+  font-family: inherit;
+  color: rgba(83, 50, 54, 0.8);
+  display: -webkit-inline-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.newsCardHeading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--pixel-15) 0;
+}
+
+.newsCardComments {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--font-xsmall);
+  font-weight: 600;
+  color: rgba(83, 50, 54, 0.5);
+}
+
+.newsCardBody {
+  align-self: stretch;
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--padd-15);
+  gap: var(--pixel-20) 0;
+  font-size: var(--font-medium);
+  color: #533236;
+}
+
+.newsCard {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  border-radius: var(--br-20);
+  background-color: #fff;
+  box-shadow: 0 56px 16px transparent,
+    0 var(--pixel-36) 14px rgba(0, 0, 0, 0.01), 0 20px 12px rgba(0, 0, 0, 0.03),
+    0 9px 9px rgba(0, 0, 0, 0.04), 0 2px 5px rgba(0, 0, 0, 0.05);
+  height: var(--pixel-450);
+  flex-direction: column;
+  justify-content: flex-start;
+  min-width: var(--pixel-300);
+  text-align: left;
+  font-size: var(--font-xsmall);
+  font-family: var(--font-sand);
+}
