@@ -67,7 +67,7 @@ export function Brands() {
         <div className={styles.brandsHeading}>
           <div className={styles.brandsHeadingContent}>
             <h1 className={styles.brandsTitle}>Cartenz Cocoa Powder</h1>
-            <h2 className={styles.herSubtitle}>OUR BRAND</h2>
+            {/* <h2 className={styles.herSubtitle}>OUR BRAND</h2> */}
             <p className={styles.heroDesc}>
               We provide a large selection of cocoa powder, ranging from natural
               to alkalized. Our cocoa powder is precisely made to support the
@@ -108,7 +108,7 @@ export function Brands() {
         <div className={styles.brandsHeading}>
           <div className={styles.brandsHeadingContent}>
             <h1 className={styles.brandsTitle}>Celebes Coffee (CELCO)</h1>
-            <h2 className={styles.herSubtitle}>OUR BRAND</h2>
+            {/* <h2 className={styles.herSubtitle}>OUR BRAND</h2> */}
             <p className={styles.heroDesc}>
               We offer you more than 20 single origin coffee all over Indonesia,
               from Sumatra to Papua. With advanced roastery machine and

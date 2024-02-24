@@ -82,7 +82,7 @@
 }
 
 .productCard:hover {
-  background-color: var(--color-darkred);
+  background-color: var(--color-yellow);
 }
 
 .productCardImage1 {

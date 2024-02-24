@@ -44,7 +44,7 @@
   margin: 0;
   position: relative;
   font-size: inherit;
-  font-weight: 600;
+  font-weight: 700;
   font-family: var(--font-jakarta);
   display: -webkit-inline-box;
   text-overflow: ellipsis;
@@ -66,7 +66,7 @@
   font-size: var(--font-small);
   font-weight: 600;
   font-family: inherit;
-  color: var(--color-brown-80);
+  color: var(--color-darkbrown-80);
   display: -webkit-inline-box;
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;

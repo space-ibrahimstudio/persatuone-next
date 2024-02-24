@@ -133,7 +133,7 @@
   font-size: var(--font-small);
   font-weight: 600;
   font-family: var(--font-noto);
-  color: var(--color-brown-80);
+  color: var(--color-darkbrown-80);
 }
 
 .feature,
@@ -230,7 +230,7 @@
 
 .aboutDesc {
   font-weight: 600;
-  color: var(--color-brown-80);
+  color: var(--color-darkbrown-80);
 }
 
 .aboutHeading {
@@ -399,7 +399,7 @@
   align-items: flex-start;
   gap: var(--pixel-10) 0;
   font-size: var(--font-small);
-  color: var(--color-brown-80);
+  color: var(--color-darkbrown-80);
   font-family: var(--font-noto);
 }
 
@@ -475,7 +475,7 @@
   gap: var(--pixel-30);
   text-align: left;
   font-size: var(--font-small);
-  color: var(--color-brown-80);
+  color: var(--color-darkbrown-80);
   font-family: var(--font-noto);
 }
 
@@ -534,7 +534,7 @@
   gap: var(--pixel-30) 0;
   text-align: center;
   font-size: var(--font-small);
-  color: var(--color-brown-80);
+  color: var(--color-darkbrown-80);
   font-family: var(--font-noto);
 }
 
@@ -751,7 +751,7 @@
 
 .contactCard {
   border-radius: var(--br-20);
-  background-color: var(--color-black-70);
+  background-color: var(--color-red);
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -852,8 +852,8 @@
 
 .footerFooter {
   align-self: stretch;
-  border-radius: var(--br-20);
-  background-color: var(--color-darkred);
+  border-top: 1px solid var(--color-yellow);
+  background-color: transparent;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -869,7 +869,7 @@
 
 .footer {
   align-self: stretch;
-  background-color: var(--color-red);
+  background-color: var(--color-darkbrown);
   justify-content: center;
   padding: var(--padd-50);
   gap: var(--pixel-30) 0;

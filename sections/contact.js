@@ -8,7 +8,7 @@ export function Contact() {
       id="contact-us"
       data-scroll-to="contact-us"
       className={styles.contact}
-      style={{ backgroundImage: "url(/img/hero.webp)" }}
+      style={{ backgroundImage: "url(/img/img-18.webp)" }}
     >
       <div className={styles.contactCard}>
         <div className={styles.aboutHeading}>
@@ -59,7 +59,7 @@ export function Contact() {
               placeholder="Write message"
             />
           </div>
-          <LgButton buttonText="Send Messages" />
+          <LgButton buttonText="Send Messages" color="yellow" />
         </div>
       </div>
     </section>

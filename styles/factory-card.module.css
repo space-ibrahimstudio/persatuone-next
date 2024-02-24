@@ -21,7 +21,7 @@
 
 .factoryCardDesc {
   font-weight: 600;
-  color: var(--color-brown-80);
+  color: var(--color-darkbrown-80);
   transition: all 0.3s ease-in-out;
 }
 

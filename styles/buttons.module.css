@@ -119,8 +119,8 @@
 
 .lgButton:hover {
   color: var(--color-white);
-  border: 1px solid var(--color-darkred);
-  background-color: var(--color-darkred);
+  border: 1px solid var(--color-yellow);
+  background-color: var(--color-yellow);
 }
 
 .lgButton,
@@ -142,15 +142,16 @@
   border-radius: var(--br-12);
   height: var(--pixel-40);
   flex-direction: row;
+  transition: all 0.3s ease-in-out;
 }
 
 .smButtonWhite {
   cursor: pointer;
-  border: 1px solid var(--color-white);
+  border: 1px solid var(--color-darkred);
   padding: var(--padd-0x15);
-  color: var(--color-red);
-  font-weight: 700;
-  background-color: var(--color-white);
+  color: var(--color-white);
+  font-weight: 600;
+  background-color: var(--color-darkred);
   border-radius: var(--br-12);
   height: var(--pixel-40);
   flex-direction: row;
@@ -159,9 +160,9 @@
 
 .smButtonWhite:hover,
 .smButton:hover {
-  border: 1px solid var(--color-darkred);
+  border: 1px solid var(--color-yellow);
   color: var(--color-white);
-  background-color: var(--color-darkred);
+  background-color: var(--color-yellow);
 }
 
 .floatingWaBtn {

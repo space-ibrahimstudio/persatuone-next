@@ -12,7 +12,7 @@
   --font-lato: "Lato", sans-serif;
   --font-noto: "Noto Sans", sans-serif;
   /* Color */
-  --color-foreground: #fffefb;
+  --color-foreground: #fffef6;
   --color-white: #fff;
   --color-white-90: rgba(255, 255, 255, 0.9);
   --color-white-80: rgba(255, 255, 255, 0.8);
@@ -21,9 +21,12 @@
   --color-red: #cf2e2e;
   --color-red-50: rgba(207, 46, 46, 0.5);
   --color-red-5: rgba(207, 46, 46, 0.05);
+  --color-yellow: #eaa326;
   --color-brown: #533236;
   --color-brown-80: rgba(83, 50, 54, 0.9);
   --color-brown-50: rgba(83, 50, 54, 0.5);
+  --color-darkbrown: #130000;
+  --color-darkbrown-80: rgba(19, 0, 0, 0.8);
   --color-green: #18c964;
   --color-darkred: #841818;
   --color-black-90: rgba(0, 0, 0, 0.9);
