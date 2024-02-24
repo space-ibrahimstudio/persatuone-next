@@ -1,4 +1,4 @@
-name: Deploy on Master
+name: Deploy on Master Persatu.one
 
 on:
   push:
