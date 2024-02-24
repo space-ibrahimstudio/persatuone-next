@@ -4,7 +4,7 @@
   font-size: var(--font-xsmall);
   font-weight: 600;
   font-family: var(--font-inter);
-  color: #fff;
+  color: inherit;
   text-align: left;
 }
 
@@ -12,38 +12,57 @@
   cursor: pointer;
   border: 0;
   padding: var(--padd-15);
-  background-color: #cf2e2e;
-  align-self: stretch;
+  color: var(--color-brown);
+  background-color: var(--color-red-5);
   border-radius: var(--br-12);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  min-width: var(--pixel-250);
+  transition: all 0.3s ease-in-out;
 }
+
+.galleryButton:hover,
+.galleryButton.active {
+  color: var(--color-white);
+  background-color: var(--color-red);
+}
+
+/* @media (min-width: 465px) {
+  .galleryButton {
+    min-width: var(--pixel-250);
+  }
+} */
 
 .productsButtonText {
   position: relative;
   font-size: var(--font-xsmall);
-  font-weight: 600;
+  font-weight: inherit;
   font-family: var(--font-sand);
-  color: #fff;
+  color: inherit;
   text-align: left;
 }
 
 .productsButton {
   cursor: pointer;
-  border: 1px solid #fff;
+  border: 1px solid var(--color-white);
   padding: var(--padd-0x15);
-  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-white);
+  font-weight: 600;
+  background-color: transparent;
   border-radius: var(--br-12);
   box-sizing: border-box;
-  height: 42px;
+  height: var(--pixel-40);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.productsButton:hover {
+  background-color: var(--color-white-10);
 }
 
 .lgButtonHollowText {
@@ -51,20 +70,21 @@
   font-size: var(--font-xsmall);
   font-weight: 600;
   font-family: var(--font-sand);
-  color: #cf2e2e;
+  color: inherit;
   text-align: left;
 }
 
 .arrowIcon {
   width: var(--pixel-18);
   position: relative;
-  height: 15px;
+  height: auto;
 }
 
 .lgButtonHollow {
   cursor: pointer;
-  border: 1px solid #cf2e2e;
+  border: 1px solid var(--color-red);
   padding: var(--padd-0x20);
+  color: var(--color-red);
   background-color: transparent;
   border-radius: var(--br-12);
   box-sizing: border-box;
@@ -74,6 +94,12 @@
   align-items: center;
   justify-content: center;
   gap: 0 var(--pixel-15);
+  transition: all 0.3s ease-in-out;
+}
+
+.lgButtonHollow:hover {
+  color: var(--color-white);
+  background-color: var(--color-red);
 }
 
 .lgButtonText {
@@ -81,22 +107,31 @@
   font-size: var(--font-xsmall);
   font-weight: 600;
   font-family: var(--font-sand);
-  color: #fff;
+  color: inherit;
   text-align: left;
 }
 
 .lgButton {
   cursor: pointer;
-  border: 1px solid #cf2e2e;
+  border: 1px solid var(--color-red);
   padding: var(--padd-0x20);
-  background-color: #cf2e2e;
+  color: var(--color-white);
+  background-color: var(--color-red);
   border-radius: var(--br-12);
   height: var(--pixel-50);
   flex-direction: row;
+  transition: all 0.3s ease-in-out;
+}
+
+.lgButton:hover {
+  color: var(--color-white);
+  border: 1px solid var(--color-darkred);
+  background-color: var(--color-darkred);
 }
 
 .lgButton,
-.smButton {
+.smButton,
+.smButtonWhite {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,10 +140,46 @@
 
 .smButton {
   cursor: pointer;
-  border: 1px solid #cf2e2e;
+  border: 1px solid var(--color-red);
   padding: var(--padd-0x15);
-  background-color: #cf2e2e;
+  color: var(--color-white);
+  font-weight: 600;
+  background-color: var(--color-red);
   border-radius: var(--br-12);
-  height: 42px;
+  height: var(--pixel-40);
   flex-direction: row;
+}
+
+.smButtonWhite {
+  cursor: pointer;
+  border: 1px solid var(--color-white);
+  padding: var(--padd-0x15);
+  color: var(--color-red);
+  font-weight: 700;
+  background-color: var(--color-white);
+  border-radius: var(--br-12);
+  height: var(--pixel-40);
+  flex-direction: row;
+  transition: all 0.3s ease-in-out;
+}
+
+.smButtonWhite:hover,
+.smButton:hover {
+  border: 1px solid var(--color-darkred);
+  color: var(--color-white);
+  background-color: var(--color-darkred);
+}
+
+.floatingWaBtn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: flex;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 999;
+  width: var(--pixel-50);
+  height: var(--pixel-50);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 8px -4px rgba(0, 0, 0, 0.6);
 }

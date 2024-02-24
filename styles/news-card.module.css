@@ -7,12 +7,12 @@
 }
 
 .newsCardDate {
-  color: #fff;
+  color: var(--color-white);
   border-radius: var(--br-12);
-  background-color: #cf2e2e;
-  border: 1px solid #cf2e2e;
+  background-color: var(--color-red);
+  border: 1px solid var(--color-red);
   box-sizing: border-box;
-  height: 42px;
+  height: var(--pixel-40);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -45,7 +45,7 @@
   position: relative;
   font-size: inherit;
   font-weight: 600;
-  font-family: inherit;
+  font-family: var(--font-inter);
   display: -webkit-inline-box;
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
@@ -66,7 +66,7 @@
   font-size: var(--font-small);
   font-weight: 600;
   font-family: inherit;
-  color: rgba(83, 50, 54, 0.8);
+  color: var(--color-brown-80);
   display: -webkit-inline-box;
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
@@ -86,7 +86,7 @@
   position: relative;
   font-size: var(--font-xsmall);
   font-weight: 600;
-  color: rgba(83, 50, 54, 0.5);
+  color: var(--color-brown-50);
 }
 
 .newsCardBody {
@@ -100,7 +100,7 @@
   padding: var(--padd-15);
   gap: var(--pixel-20) 0;
   font-size: var(--font-medium);
-  color: #533236;
+  color: var(--color-red);
 }
 
 .newsCard {
@@ -109,7 +109,7 @@
   align-items: center;
   flex: 1;
   border-radius: var(--br-20);
-  background-color: #fff;
+  background-color: var(--color-white);
   box-shadow: 0 56px 16px transparent,
     0 var(--pixel-36) 14px rgba(0, 0, 0, 0.01), 0 20px 12px rgba(0, 0, 0, 0.03),
     0 9px 9px rgba(0, 0, 0, 0.04), 0 2px 5px rgba(0, 0, 0, 0.05);

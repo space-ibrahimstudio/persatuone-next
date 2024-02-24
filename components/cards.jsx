@@ -60,7 +60,10 @@ export const FactoryCard = ({ variant, cardTitle, cardDesc, imageUrl }) => {
 export const CocoaCard = ({ variant, cardTitle, cardDesc, imageUrl }) => {
   if (variant === "revert") {
     return (
-      <section className={cocoa.productCard}>
+      <section
+        className={cocoa.productCard}
+        style={{ flexWrap: "wrap-reverse" }}
+      >
         <img
           className={cocoa.productCardImage1}
           src={imageUrl}
@@ -75,7 +78,7 @@ export const CocoaCard = ({ variant, cardTitle, cardDesc, imageUrl }) => {
     );
   } else {
     return (
-      <section className={cocoa.productCard}>
+      <section className={cocoa.productCard} style={{ flexWrap: "wrap" }}>
         <div className={cocoa.productCardHeading}>
           <h1 className={cocoa.productCardTitle}>{cardTitle}</h1>
           <p className={cocoa.productCardDesc}>{cardDesc}</p>

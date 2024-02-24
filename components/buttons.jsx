@@ -1,47 +1,66 @@
 import React from "react";
 import styles from "@/styles/buttons.module.css";
 
-export const LgButton = ({ hasIcon, buttonText }) => {
+export const LgButton = ({ hasIcon, buttonText, children, onClick }) => {
   if (hasIcon === "yes") {
     return (
-      <button className={styles.lgButtonHollow}>
+      <button className={styles.lgButtonHollow} onClick={onClick}>
         <b className={styles.lgButtonHollowText}>{buttonText}</b>
-        <img
-          className={styles.arrowIcon}
-          alt={buttonText}
-          src="/svg/arrowicon.svg"
-        />
+        {children}
       </button>
     );
   } else {
     return (
-      <button className={styles.lgButton}>
+      <button className={styles.lgButton} onClick={onClick}>
         <b className={styles.lgButtonText}>{buttonText}</b>
       </button>
     );
   }
 };
 
-export const SmButton = ({ buttonText }) => {
+export const SmButton = ({ variant, buttonText, onClick }) => {
+  if (variant === "white") {
+    return (
+      <button className={styles.smButtonWhite} onClick={onClick}>
+        <b className={styles.productsButtonText}>{buttonText}</b>
+      </button>
+    );
+  } else {
+    return (
+      <button className={styles.smButton} onClick={onClick}>
+        <b className={styles.productsButtonText}>{buttonText}</b>
+      </button>
+    );
+  }
+};
+
+export const ProductsButton = ({ buttonText, onClick }) => {
   return (
-    <button className={styles.smButton}>
+    <button className={styles.productsButton} onClick={onClick}>
       <b className={styles.productsButtonText}>{buttonText}</b>
     </button>
   );
 };
 
-export const ProductsButton = ({ buttonText }) => {
+export const GalleryButton = ({ buttonText, isActive, onClick }) => {
   return (
-    <button className={styles.productsButton}>
-      <b className={styles.productsButtonText}>{buttonText}</b>
-    </button>
-  );
-};
-
-export const GalleryButton = ({ buttonText }) => {
-  return (
-    <button className={styles.galleryButton}>
+    <button
+      className={`${styles.galleryButton} ${isActive ? styles.active : ""}`}
+      onClick={onClick}
+    >
       <b className={styles.galleryButtonText}>{buttonText}</b>
     </button>
+  );
+};
+
+export const WhatsAppButton = ({ onClick }) => {
+  return (
+    <img
+      className={styles.floatingWaBtn}
+      loading="lazy"
+      alt="WhatsApp Persatu.one official"
+      src="/svg/whatsapp-icon.svg"
+      onClick={onClick}
+    />
   );
 };
