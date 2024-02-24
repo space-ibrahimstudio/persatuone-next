@@ -3,7 +3,7 @@
   position: relative;
   font-size: var(--font-xsmall);
   font-weight: 600;
-  font-family: var(--font-inter);
+  font-family: var(--font-jakarta);
   color: inherit;
   text-align: left;
 }
@@ -29,17 +29,11 @@
   background-color: var(--color-red);
 }
 
-/* @media (min-width: 465px) {
-  .galleryButton {
-    min-width: var(--pixel-250);
-  }
-} */
-
 .productsButtonText {
   position: relative;
   font-size: var(--font-xsmall);
   font-weight: inherit;
-  font-family: var(--font-sand);
+  font-family: var(--font-noto);
   color: inherit;
   text-align: left;
 }
@@ -69,7 +63,7 @@
   position: relative;
   font-size: var(--font-xsmall);
   font-weight: 600;
-  font-family: var(--font-sand);
+  font-family: var(--font-noto);
   color: inherit;
   text-align: left;
 }
@@ -106,7 +100,7 @@
   position: relative;
   font-size: var(--font-xsmall);
   font-weight: 600;
-  font-family: var(--font-sand);
+  font-family: var(--font-noto);
   color: inherit;
   text-align: left;
 }
@@ -172,8 +166,8 @@
 
 .floatingWaBtn {
   position: fixed;
-  bottom: 25px;
-  right: 25px;
+  bottom: var(--pixel-30);
+  right: var(--pixel-30);
   display: flex;
   border-radius: 50%;
   cursor: pointer;

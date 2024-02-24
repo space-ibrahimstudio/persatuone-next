@@ -11,7 +11,7 @@
 .productCardDesc {
   font-size: var(--font-small);
   font-weight: 600;
-  font-family: var(--font-sand);
+  font-family: var(--font-noto);
 }
 
 .productCardHeading {
@@ -32,9 +32,13 @@
 }
 
 @media (min-width: 834px) {
-  .productCardImage,
-  .productCardImage1 {
+  .productCardImage {
     border-radius: 20px 0 0 20px;
+    width: var(--pixel-350);
+  }
+
+  .productCardImage1 {
+    border-radius: 0 20px 20px 0;
     width: var(--pixel-350);
   }
 
@@ -72,7 +76,7 @@
   text-align: left;
   font-size: var(--font-large);
   color: var(--color-white);
-  font-family: var(--font-inter);
+  font-family: var(--font-jakarta);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }

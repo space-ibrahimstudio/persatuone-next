@@ -18,7 +18,7 @@
   align-items: center;
   justify-content: center;
   padding: var(--padd-0x15);
-  z-index: 0;
+  z-index: 2;
 }
 
 .newsCardImage,
@@ -45,7 +45,7 @@
   position: relative;
   font-size: inherit;
   font-weight: 600;
-  font-family: var(--font-inter);
+  font-family: var(--font-jakarta);
   display: -webkit-inline-box;
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
@@ -108,6 +108,7 @@
   display: flex;
   align-items: center;
   flex: 1;
+  cursor: pointer;
   border-radius: var(--br-20);
   background-color: var(--color-white);
   box-shadow: 0 56px 16px transparent,
@@ -119,5 +120,11 @@
   min-width: var(--pixel-300);
   text-align: left;
   font-size: var(--font-xsmall);
-  font-family: var(--font-sand);
+  font-family: var(--font-noto);
+  transform: translateY(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.newsCard:hover {
+  transform: translateY(-10px);
 }

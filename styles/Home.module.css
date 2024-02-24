@@ -16,7 +16,7 @@
   position: relative;
   font-size: var(--font-xsmall);
   font-weight: 500;
-  font-family: var(--font-sand);
+  font-family: var(--font-noto);
   color: var(--color-white);
   text-align: left;
 }
@@ -39,7 +39,7 @@
 .tabButton.active:hover {
   opacity: 1;
   cursor: default;
-  box-shadow: inset 0 -4px 0 0 var(--color-white);
+  box-shadow: inset 0 -5px 0 0 var(--color-white);
 }
 
 .navMenu,
@@ -101,7 +101,7 @@
 .heroTitle {
   font-size: var(--font-xlarge);
   font-weight: 600;
-  font-family: var(--font-inter);
+  font-family: var(--font-jakarta);
 }
 
 .heroDesc {
@@ -132,7 +132,7 @@
   align-self: stretch;
   font-size: var(--font-small);
   font-weight: 600;
-  font-family: var(--font-sand);
+  font-family: var(--font-noto);
   color: var(--color-brown-80);
 }
 
@@ -171,7 +171,7 @@
   gap: var(--pixel-30);
   font-size: var(--font-xlarge);
   color: var(--color-red);
-  font-family: var(--font-inter);
+  font-family: var(--font-jakarta);
 }
 
 .hero {
@@ -188,7 +188,7 @@
   text-align: center;
   font-size: var(--font-small);
   color: var(--color-white);
-  font-family: var(--font-sand);
+  font-family: var(--font-noto);
 }
 
 .hero::after {
@@ -210,7 +210,7 @@
 .aboutTitle {
   font-size: var(--font-large);
   font-weight: 600;
-  font-family: var(--font-inter);
+  font-family: var(--font-jakarta);
 }
 
 .aboutDesc,
@@ -277,7 +277,7 @@
   text-align: left;
   font-size: var(--font-small);
   color: var(--color-red);
-  font-family: var(--font-sand);
+  font-family: var(--font-noto);
 }
 
 .factoryTitle {
@@ -310,7 +310,7 @@
   text-align: center;
   font-size: var(--font-large);
   color: var(--color-red);
-  font-family: var(--font-inter);
+  font-family: var(--font-jakarta);
 }
 
 .facilityDesc {
@@ -319,7 +319,7 @@
   position: relative;
   font-size: var(--font-small);
   font-weight: 600;
-  font-family: var(--font-sand);
+  font-family: var(--font-noto);
 }
 
 .facilityHeading {
@@ -354,7 +354,7 @@
   text-align: center;
   font-size: var(--font-large);
   color: var(--color-white);
-  font-family: var(--font-inter);
+  font-family: var(--font-jakarta);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -400,7 +400,7 @@
   gap: var(--pixel-10) 0;
   font-size: var(--font-small);
   color: var(--color-brown-80);
-  font-family: var(--font-sand);
+  font-family: var(--font-noto);
 }
 
 .why {
@@ -413,7 +413,7 @@
   text-align: left;
   font-size: var(--font-large);
   color: var(--color-red);
-  font-family: var(--font-inter);
+  font-family: var(--font-jakarta);
 }
 
 .brandsImage {
@@ -429,7 +429,7 @@
   position: relative;
   font-size: var(--font-large);
   font-weight: 600;
-  font-family: var(--font-inter);
+  font-family: var(--font-jakarta);
   color: var(--color-red);
 }
 
@@ -476,7 +476,7 @@
   text-align: left;
   font-size: var(--font-small);
   color: var(--color-brown-80);
-  font-family: var(--font-sand);
+  font-family: var(--font-noto);
 }
 
 .coaproductsTab {
@@ -500,14 +500,16 @@
 }
 
 .coaproducts {
-  background-color: var(--color-black-50);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   overflow: hidden;
   justify-content: center;
   padding: var(--padd-50x150);
   text-align: center;
   font-size: var(--font-small);
   color: var(--color-white);
-  font-family: var(--font-sand);
+  font-family: var(--font-noto);
 }
 
 .cofproducts,
@@ -533,7 +535,7 @@
   text-align: center;
   font-size: var(--font-small);
   color: var(--color-brown-80);
-  font-family: var(--font-sand);
+  font-family: var(--font-noto);
 }
 
 .certifications,
@@ -558,7 +560,7 @@
   text-align: center;
   font-size: var(--font-large);
   color: var(--color-red);
-  font-family: var(--font-inter);
+  font-family: var(--font-jakarta);
 }
 
 .galleryTab {
@@ -632,7 +634,7 @@
 
 .contactDesc,
 .iputField {
-  font-family: var(--font-sand);
+  font-family: var(--font-noto);
 }
 
 .contactDesc {
@@ -700,7 +702,7 @@
   border: 0;
   background-color: transparent;
   font-weight: 700;
-  font-family: var(--font-sand);
+  font-family: var(--font-noto);
   font-size: var(--font-xsmall);
   outline: 0;
   flex: 1;
@@ -765,7 +767,7 @@
   text-align: left;
   font-size: var(--font-large);
   color: var(--color-white);
-  font-family: var(--font-inter);
+  font-family: var(--font-jakarta);
 }
 
 .logoIcon1 {
@@ -872,9 +874,9 @@
   padding: var(--padd-50);
   gap: var(--pixel-30) 0;
   text-align: left;
-  font-size: var(--font-small);
+  font-size: var(--font-xsmall);
   color: var(--color-white-80);
-  font-family: var(--font-sand);
+  font-family: var(--font-noto);
 }
 
 .home {

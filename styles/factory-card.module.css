@@ -22,6 +22,7 @@
 .factoryCardDesc {
   font-weight: 600;
   color: var(--color-brown-80);
+  transition: all 0.3s ease-in-out;
 }
 
 .factoryCardHeading {
@@ -49,6 +50,18 @@
   text-align: left;
   font-size: var(--font-small);
   color: var(--color-red);
-  font-family: var(--font-sand);
+  font-family: var(--font-noto);
   cursor: pointer;
+  transform: translateY(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.factoryCard:hover {
+  transform: translateY(-10px);
+  background-color: var(--color-red);
+  color: var(--color-white);
+}
+
+.factoryCard:hover .factoryCardDesc {
+  color: var(--color-white);
 }

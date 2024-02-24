@@ -26,6 +26,6 @@
   text-align: center;
   font-size: var(--font-small);
   color: var(--color-red);
-  font-family: var(--font-sand);
+  font-family: var(--font-noto);
   cursor: pointer;
 }
