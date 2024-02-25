@@ -10,7 +10,7 @@ export function Certifications({ sectionId }) {
     >
       <div className={styles.facilityHeading}>
         <h1 className={styles.factoryTitle}>Certifications</h1>
-        <p className={styles.featureContentDesc}>
+        <p className={styles.aboutDesc}>
           We offer you high quality cocoa powder produced from organic, fine,
           and fermented Indonesian cocoa beans. we accept customized cocoa
           powder as your needs and request, such like product color and chemical

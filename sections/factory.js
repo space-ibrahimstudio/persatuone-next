@@ -11,7 +11,7 @@ export function Factory({ sectionId }) {
     >
       <div className={styles.factoryHeading}>
         <h1 className={styles.factoryTitle}>Our Factory</h1>
-        <p className={styles.featureContentDesc}>
+        <p className={styles.aboutDesc}>
           From refreshing coconut water to rich coconut milk and everything in
           between, we offer a diverse range of coconut products tailored to meet
           your specifications.

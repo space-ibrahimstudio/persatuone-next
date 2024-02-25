@@ -244,6 +244,7 @@
 
 .aboutDesc {
   font-weight: 600;
+  font-size: var(--font-small);
   color: var(--color-darkbrown-80);
 }
 
