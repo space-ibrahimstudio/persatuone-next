@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import { LgButton } from "@/components/buttons";
 import styles from "@/styles/Home.module.css";
 
-export function Brands() {
+export function Brands({ sectionId }) {
   const cocoaDownload = () => {
     const downloadLink = document.createElement("a");
     downloadLink.href =
@@ -54,8 +54,8 @@ export function Brands() {
   return (
     <>
       <section
-        id="our-brands"
-        data-scroll-to="our-brands"
+        id={sectionId}
+        section-view-id={sectionId}
         className={styles.brands}
       >
         <img
@@ -102,6 +102,7 @@ export function Brands() {
       </section>
       <section
         id="celco-section"
+        element-view-id="celco-section"
         className={styles.brands}
         style={{ flexWrap: "wrap-reverse" }}
       >

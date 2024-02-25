@@ -1,41 +1,51 @@
 import React from "react";
+import { scrollToSection, scrollToElement } from "@/utils/handler";
 import styles from "@/styles/Home.module.css";
 
-export function Footer() {
+export function Footer({ componentId }) {
   return (
-    <footer className={styles.footer}>
+    <footer id={componentId} className={styles.footer}>
       <div className={styles.footerNav}>
-        <div className={styles.footerLogo}>
+        <div
+          className={styles.footerLogo}
+          onClick={() => scrollToSection("hero-section")}
+        >
           <img
-            className={styles.logoIcon1}
+            className={styles.footerLogoImg}
             loading="lazy"
-            alt=""
+            alt={componentId}
             src="/svg/logo.svg"
           />
         </div>
         <div className={styles.footerMenu}>
           <div className={styles.footerMenuWrapper}>
             <h1 className={styles.footerMenuTitle}>About us</h1>
-            <h2 data-scroll-to="about-us" className={styles.footerMenuLink}>
+            <h2
+              onClick={() => scrollToSection("about-us")}
+              className={styles.footerMenuLink}
+            >
               Who we are
             </h2>
             <h2
-              data-scroll-to="factory-section"
+              onClick={() => scrollToElement("factory-section")}
               className={styles.footerMenuLink}
             >
               Factory
             </h2>
             <h2
-              data-scroll-to="facility-section"
+              onClick={() => scrollToElement("facility-section")}
               className={styles.footerMenuLink}
             >
               Our facility
             </h2>
-            <h2 data-scroll-to="why-section" className={styles.footerMenuLink}>
+            <h2
+              onClick={() => scrollToElement("why-section")}
+              className={styles.footerMenuLink}
+            >
               Why choose us
             </h2>
             <h2
-              data-scroll-to="gallery-showcase"
+              onClick={() => scrollToSection("gallery-showcase")}
               className={styles.footerMenuLink}
             >
               Gallery
@@ -43,26 +53,32 @@ export function Footer() {
           </div>
           <div className={styles.footerMenuWrapper}>
             <h1 className={styles.footerMenuTitle}>Products & Brands</h1>
-            <h2 data-scroll-to="our-products" className={styles.footerMenuLink}>
+            <h2
+              onClick={() => scrollToSection("our-products")}
+              className={styles.footerMenuLink}
+            >
               Cocoa
             </h2>
             <h2
-              data-scroll-to="coffee-section"
+              onClick={() => scrollToElement("coffee-section")}
               className={styles.footerMenuLink}
             >
               Coffee
             </h2>
             <h2
-              data-scroll-to="certi-section"
+              onClick={() => scrollToElement("certi-section")}
               className={styles.footerMenuLink}
             >
               Cetifications
             </h2>
-            <h2 data-scroll-to="our-brands" className={styles.footerMenuLink}>
+            <h2
+              onClick={() => scrollToSection("our-brands")}
+              className={styles.footerMenuLink}
+            >
               Cartenz Cocoa Powder
             </h2>
             <h2
-              data-scroll-to="celco-section"
+              onClick={() => scrollToElement("celco-section")}
               className={styles.footerMenuLink}
             >
               Celebes Coffee

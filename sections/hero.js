@@ -1,15 +1,12 @@
 import React from "react";
+import { scrollToSection } from "@/utils/handler";
 import { LgButton } from "@/components/buttons";
 import { FeatureCount } from "@/components/cards";
 import styles from "@/styles/Home.module.css";
 
-export function Hero() {
+export function Hero({ sectionId }) {
   return (
-    <header
-      id="hero-section"
-      data-scroll-to="hero-section"
-      className={styles.hero}
-    >
+    <header id={sectionId} section-view-id={sectionId} className={styles.hero}>
       <div className={styles.heroHeading}>
         <h2 className={styles.herSubtitle}>
           Cocoa Powder Supplier From Indonesia
@@ -22,7 +19,10 @@ export function Hero() {
           Indonesia. We are happy to grow with your business, to spread the
           beauty of Indonesian Commodities to the entire world!
         </p>
-        <LgButton buttonText="Explore More" />
+        <LgButton
+          buttonText="Explore More"
+          onClick={() => scrollToSection("our-products")}
+        />
       </div>
       <div className={styles.feature}>
         <FeatureCount

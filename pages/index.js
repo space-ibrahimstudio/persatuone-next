@@ -31,20 +31,20 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <WhatsAppButton />
-      <div className={styles.home}>
-        <Navbar />
-        <Hero />
-        <About />
-        <Factory />
-        <Facility />
-        <Why />
-        <Brands />
-        <Products />
-        <Certifications />
-        <Gallery />
-        <News />
-        <Contact />
-        <Footer />
+      <div id="persatu.one-home" className={styles.home}>
+        <Navbar componentId="home-nav" />
+        <Hero sectionId="hero-section" />
+        <About sectionId="about-us" />
+        <Factory sectionId="factory-section" />
+        <Facility sectionId="facility-section" />
+        <Why sectionId="why-section" />
+        <Brands sectionId="our-brands" />
+        <Products sectionId="our-products" />
+        <Certifications sectionId="certi-section" />
+        <Gallery sectionId="gallery-showcase" />
+        <News sectionId="news-articles" />
+        <Contact sectionId="contact-us" />
+        <Footer componentId="home-footer" />
       </div>
     </>
   );

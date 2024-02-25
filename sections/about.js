@@ -1,9 +1,13 @@
 import React from "react";
 import styles from "@/styles/Home.module.css";
 
-export function About() {
+export function About({ sectionId }) {
   return (
-    <section id="about-us" data-scroll-to="about-us" className={styles.about}>
+    <section
+      id={sectionId}
+      section-view-id={sectionId}
+      className={styles.about}
+    >
       <div className={styles.aboutHeading}>
         <h1 className={styles.aboutTitle}>Who we are?</h1>
         <h2 className={styles.aboutSubtitle}>

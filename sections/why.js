@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "@/styles/Home.module.css";
 
-export function Why() {
+export function Why({ sectionId }) {
   return (
-    <section id="why-section" className={styles.why}>
+    <section id={sectionId} element-view-id={sectionId} className={styles.why}>
       <div className={styles.aboutHeading}>
         <h1 className={styles.factoryTitle}>What make us different?</h1>
         <div className={styles.whyDesc}>
@@ -53,7 +53,7 @@ export function Why() {
         className={styles.aboutImage}
         src="/img/img-14.webp"
         loading="lazy"
-        alt="What make us different?"
+        alt={sectionId}
       />
     </section>
   );

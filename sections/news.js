@@ -2,11 +2,11 @@ import React from "react";
 import { NewsCard } from "@/components/cards";
 import styles from "@/styles/Home.module.css";
 
-export function News() {
+export function News({ sectionId }) {
   return (
     <section
-      id="news-articles"
-      data-scroll-to="news-articles"
+      id={sectionId}
+      section-view-id={sectionId}
       className={styles.certifications}
     >
       <div className={styles.articlesHeading}>

@@ -61,9 +61,10 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: transparent;
+  background-color: var(--color-black-50);
+  backdrop-filter: blur(5px);
   box-shadow: 0;
-  height: var(--pixel-70);
+  height: 70px;
   overflow: hidden;
   flex-shrink: 0;
   display: flex;
@@ -78,10 +79,10 @@
 
 .nav.visible {
   background-color: var(--color-red);
+  backdrop-filter: blur(0);
   box-shadow: 0 57px 16px transparent, 0 37px 15px transparent,
     0 21px 12px rgba(0, 0, 0, 0.02), 0 9px 9px rgba(0, 0, 0, 0.03),
     0 2px 5px rgba(0, 0, 0, 0.03);
-  height: var(--pixel-70);
 }
 
 .herSubtitle {
@@ -114,9 +115,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: var(--padd-30x200);
+  padding: var(--padd-30) 0;
   gap: var(--pixel-30) 0;
   z-index: 2;
+}
+
+@media (min-width: 701px) {
+  .heroHeading {
+    padding: var(--padd-30x200);
+  }
 }
 
 .featureContentDesc,
@@ -149,7 +156,6 @@
   overflow: hidden;
   flex-direction: column;
   gap: var(--pixel-10) 0;
-  min-width: var(--pixel-250);
 }
 
 .feature,
@@ -166,12 +172,21 @@
     0 2px 5px rgba(0, 0, 0, 0.03);
   overflow: hidden;
   flex-direction: row;
-  flex-wrap: wrap;
   padding: var(--padd-30);
   gap: var(--pixel-30);
   font-size: var(--font-xlarge);
   color: var(--color-red);
   font-family: var(--font-jakarta);
+}
+
+@media (max-width: 700px) {
+  .feature {
+    font-size: var(--font-large);
+  }
+
+  .featureContentDesc {
+    font-size: var(--font-xsmall);
+  }
 }
 
 .hero {
@@ -184,7 +199,6 @@
   padding: var(--padd-hero);
   box-sizing: border-box;
   gap: var(--pixel-30) 0;
-  min-height: 100vh;
   text-align: center;
   font-size: var(--font-small);
   color: var(--color-white);
@@ -575,11 +589,32 @@
 }
 
 .galleryImage {
-  width: var(--pixel-232);
-  border-radius: var(--br-20);
-  height: var(--pixel-232);
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   flex-shrink: 0;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+}
+
+.galleryImageWrap {
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: var(--br-20);
+  width: var(--pixel-232);
+  height: var(--pixel-232);
+  flex-shrink: 0;
+}
+
+@media (max-width: 700px) {
+  .galleryImageWrap {
+    width: var(--pixel-200);
+    height: var(--pixel-200);
+  }
+}
+
+.galleryImageWrap:hover .galleryImage {
+  transform: scale(1.1);
 }
 
 .galleryList {
@@ -770,7 +805,7 @@
   font-family: var(--font-jakarta);
 }
 
-.logoIcon1 {
+.footerLogoImg {
   width: var(--pixel-145);
   position: relative;
   height: auto;

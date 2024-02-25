@@ -20,7 +20,7 @@
 }
 
 .factoryCardDesc {
-  font-weight: 600;
+  font-weight: 500;
   color: var(--color-darkbrown-80);
   transition: all 0.3s ease-in-out;
 }
@@ -52,14 +52,17 @@
   color: var(--color-red);
   font-family: var(--font-noto);
   cursor: pointer;
+  box-shadow: 0 56px 16px transparent,
+    0 var(--pixel-36) 14px rgba(0, 0, 0, 0.01), 0 20px 12px rgba(0, 0, 0, 0.03),
+    0 9px 9px rgba(0, 0, 0, 0.04), 0 2px 5px rgba(0, 0, 0, 0.05);
   transform: translateY(0);
   transition: all 0.3s ease-in-out;
 }
 
 .factoryCard:hover {
-  transform: translateY(-10px);
+  transform: translateY(-5px);
   background-color: var(--color-red);
-  color: var(--color-white);
+  color: var(--color-yellow);
 }
 
 .factoryCard:hover .factoryCardDesc {

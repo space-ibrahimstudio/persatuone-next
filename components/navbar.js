@@ -1,22 +1,23 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { scrollToSection } from "@/utils/handler";
 import { SmButton } from "./buttons";
 import styles from "@/styles/Home.module.css";
 
-export function Navbar() {
+export function Navbar({ componentId }) {
   const [activeTab, setActiveTab] = useState("hero-section");
   const [isVisible, setIsVisible] = useState(false);
 
-  const handleScroll = () => {
-    if (window.scrollY > 300) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
-  };
-
   useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
 
     return () => {
@@ -27,14 +28,14 @@ export function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const yOffset = -80;
-      const sections = document.querySelectorAll("[data-scroll-to]");
+      const sections = document.querySelectorAll("[section-view-id]");
 
       sections.forEach((section) => {
         const top =
           section.getBoundingClientRect().top + window.scrollY + yOffset;
         const height = section.offsetHeight;
         if (window.scrollY >= top && window.scrollY < top + height) {
-          const id = section.getAttribute("data-scroll-to");
+          const id = section.getAttribute("section-view-id");
           setActiveTab(id);
           const pageTitle = getPageTitle(id);
           document.title = pageTitle;
@@ -73,17 +74,11 @@ export function Navbar() {
     };
   }, []);
 
-  const scrollToSection = (id) => {
-    const element = document.querySelector(`[data-scroll-to="${id}"]`);
-    if (element) {
-      const yOffset = -70;
-      const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
-      window.scrollTo({ top: y, behavior: "smooth" });
-    }
-  };
-
   return (
-    <nav className={`${styles.nav} ${isVisible ? styles.visible : ""}`}>
+    <nav
+      id={componentId}
+      className={`${styles.nav} ${isVisible ? styles.visible : ""}`}
+    >
       <div
         className={styles.navLogo}
         onClick={() => scrollToSection("hero-section")}
@@ -91,11 +86,19 @@ export function Navbar() {
         <img
           className={styles.logoIcon}
           loading="lazy"
-          alt=""
+          alt={componentId}
           src="/svg/logo.svg"
         />
       </div>
       <div className={styles.navMenu}>
+        <button
+          className={`${styles.tabButton} ${
+            activeTab === "hero-section" ? styles.active : ""
+          }`}
+          onClick={() => scrollToSection("hero-section")}
+        >
+          <div className={styles.tabButtonText}>Home</div>
+        </button>
         <button
           className={`${styles.tabButton} ${
             activeTab === "about-us" ? styles.active : ""

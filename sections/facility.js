@@ -2,10 +2,11 @@ import React from "react";
 import { FeatureCard } from "@/components/cards";
 import styles from "@/styles/Home.module.css";
 
-export function Facility() {
+export function Facility({ sectionId }) {
   return (
     <section
-      id="facility-section"
+      id={sectionId}
+      element-view-id={sectionId}
       className={styles.facility}
       style={{ backgroundImage: "url(/img/facility-bg.jpg)" }}
     >

@@ -1,9 +1,13 @@
 import React from "react";
 import styles from "@/styles/Home.module.css";
 
-export function Certifications() {
+export function Certifications({ sectionId }) {
   return (
-    <section id="certi-section" className={styles.certifications}>
+    <section
+      id={sectionId}
+      element-view-id={sectionId}
+      className={styles.certifications}
+    >
       <div className={styles.facilityHeading}>
         <h1 className={styles.factoryTitle}>Certifications</h1>
         <p className={styles.featureContentDesc}>
@@ -17,7 +21,7 @@ export function Certifications() {
         <img
           style={{
             position: "relative",
-            width: "var(--pixel-95)",
+            width: "var(--pixel-70)",
             height: "auto",
           }}
           src="/svg/iso-icon.svg"

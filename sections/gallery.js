@@ -13,12 +13,12 @@ const albums = [
   {
     id: 2,
     name: "Coffee Manufacturer",
-    images: Array.from({ length: 4 }, (_, i) => `Album 2 Image ${i + 1}`),
+    images: Array.from({ length: 5 }, (_, i) => `Album 2 Image ${i + 1}`),
   },
   {
     id: 3,
     name: "Export Shipment",
-    images: Array.from({ length: 10 }, (_, i) => `Album 3 Image ${i + 1}`),
+    images: Array.from({ length: 14 }, (_, i) => `Album 3 Image ${i + 1}`),
   },
   {
     id: 4,
@@ -32,7 +32,7 @@ const albums = [
   },
 ];
 
-export function Gallery() {
+export function Gallery({ sectionId }) {
   const [selectedAlbum, setSelectedAlbum] = useState(albums[0]);
 
   const handleAlbumClick = (album) => {
@@ -41,8 +41,8 @@ export function Gallery() {
 
   return (
     <section
-      id="gallery-showcase"
-      data-scroll-to="gallery-showcase"
+      id={sectionId}
+      section-view-id={sectionId}
       className={styles.certifications}
     >
       <div className={styles.facilityHeading}>
@@ -67,12 +67,13 @@ export function Gallery() {
         </div>
         <div className={styles.galleryList}>
           {selectedAlbum.images.map((image, index) => (
-            <img
-              key={index}
-              className={styles.galleryImage}
-              src={`/img/albums/${image}.webp`}
-              alt={image}
-            />
+            <div className={styles.galleryImageWrap} key={index}>
+              <img
+                className={styles.galleryImage}
+                src={`/img/albums/${image}.webp`}
+                alt={image}
+              />
+            </div>
           ))}
         </div>
       </div>

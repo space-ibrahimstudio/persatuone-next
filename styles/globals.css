@@ -54,7 +54,7 @@
   --padd-30x0: 30px 0;
   --padd-0x30: 0 30px;
   --padd-15: 15px;
-  --padd-hero: 100px 50px 50px 50px;
+  --padd-hero: 120px 50px 50px 50px;
   /* Border Radius */
   --br-12: 12px;
   --br-20: 20px;
@@ -114,7 +114,7 @@
     --padd-30x0: 26px 0;
     --padd-0x30: 0px 26px;
     --padd-15: 13px;
-    --padd-hero: 85px 43px 43px 43px;
+    --padd-hero: 113px 43px 43px 43px;
     /* Border Radius */
     --br-12: 10px;
     --br-20: 17px;
@@ -173,7 +173,7 @@
     --padd-30x0: 20px;
     --padd-0x30: 0px;
     --padd-15: 11px;
-    --padd-hero: 71.5px 25px 30px 25px;
+    --padd-hero: 100px 25px 30px 25px;
     /* Border Radius */
     --br-12: 8.5px;
     --br-20: 14px;
@@ -231,10 +231,10 @@ a {
   text-decoration: none;
 }
 
-/* h1,
+h1,
 h2,
 h6,
 p {
   text-wrap: balance;
   font-optical-sizing: auto;
-} */
+}

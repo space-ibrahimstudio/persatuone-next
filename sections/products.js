@@ -3,12 +3,12 @@ import { ProductsButton } from "@/components/buttons";
 import { CocoaCard, CoffeeCard } from "@/components/cards";
 import styles from "@/styles/Home.module.css";
 
-export function Products() {
+export function Products({ sectionId }) {
   return (
     <>
       <section
-        id="our-products"
-        data-scroll-to="our-products"
+        id={sectionId}
+        section-view-id={sectionId}
         className={styles.coaproducts}
         style={{ backgroundImage: "url(/img/products-bg.jpg)" }}
       >
@@ -42,7 +42,11 @@ export function Products() {
           </div>
         </div>
       </section>
-      <section id="coffee-section" className={styles.cofproducts}>
+      <section
+        id="coffee-section"
+        element-view-id="coffee-section"
+        className={styles.cofproducts}
+      >
         <div className={styles.facilityHeading}>
           <h2 className={styles.herSubtitle}>OUR PRODUCTS</h2>
           <h1 className={styles.brandsTitle}>Coffee Products</h1>
@@ -54,17 +58,20 @@ export function Products() {
         <div className={styles.cofproductsBody}>
           <CoffeeCard
             cardTitle="Spray Dried Instant Coffee"
-            imageUrl="/img/img-02.webp"
+            imageUrl="/img/spray-dried-instant-coffee.webp"
           />
           <CoffeeCard
             cardTitle="Liquid Concentrate Coffee"
-            imageUrl="/img/img-03.webp"
+            imageUrl="/img/liquid-concentrate-coffee.webp"
           />
           <CoffeeCard
             cardTitle="Roasted Coffee Beans"
-            imageUrl="/img/img-04.webp"
+            imageUrl="/img/roasted-coffee-beans.webp"
           />
-          <CoffeeCard cardTitle="Grounded Coffee" imageUrl="/img/img-05.webp" />
+          <CoffeeCard
+            cardTitle="Grounded Coffee"
+            imageUrl="/img/grounded-coffee.webp"
+          />
         </div>
       </section>
     </>

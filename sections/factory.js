@@ -2,9 +2,13 @@ import React from "react";
 import { FactoryCard } from "@/components/cards";
 import styles from "@/styles/Home.module.css";
 
-export function Factory() {
+export function Factory({ sectionId }) {
   return (
-    <section id="factory-section" className={styles.factory}>
+    <section
+      id={sectionId}
+      element-view-id={sectionId}
+      className={styles.factory}
+    >
       <div className={styles.factoryHeading}>
         <h1 className={styles.factoryTitle}>Our Factory</h1>
         <p className={styles.featureContentDesc}>

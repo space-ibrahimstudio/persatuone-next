@@ -20,12 +20,26 @@
   align-items: center;
   flex: 1;
   flex-direction: column;
+  border-radius: var(--pixel-30);
+  background-color: var(--color-white);
   justify-content: flex-start;
-  gap: var(--pixel-15) 0;
+  gap: var(--pixel-10) 0;
   min-width: var(--pixel-200);
   text-align: center;
   font-size: var(--font-small);
   color: var(--color-red);
   font-family: var(--font-noto);
+  padding: var(--padd-10);
+  box-shadow: 0 56px 16px transparent,
+    0 var(--pixel-36) 14px rgba(0, 0, 0, 0.01), 0 20px 12px rgba(0, 0, 0, 0.03),
+    0 9px 9px rgba(0, 0, 0, 0.04), 0 2px 5px rgba(0, 0, 0, 0.05);
   cursor: pointer;
+  transform: translateY(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.coffeeCard:hover {
+  transform: translateY(-5px);
+  color: var(--color-white);
+  background-color: var(--color-red);
 }

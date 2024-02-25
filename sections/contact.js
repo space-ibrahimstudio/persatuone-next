@@ -2,11 +2,11 @@ import React from "react";
 import { LgButton } from "@/components/buttons";
 import styles from "@/styles/Home.module.css";
 
-export function Contact() {
+export function Contact({ sectionId }) {
   return (
     <section
-      id="contact-us"
-      data-scroll-to="contact-us"
+      id={sectionId}
+      section-view-id={sectionId}
       className={styles.contact}
       style={{ backgroundImage: "url(/img/img-18.webp)" }}
     >

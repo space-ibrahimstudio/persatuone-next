@@ -1,18 +1,17 @@
-export const scrollToElement = (offsetY = 0) => {
-  const elements = document.querySelectorAll("[data-scroll-to]");
+export const scrollToSection = (id) => {
+  const element = document.querySelector(`[section-view-id="${id}"]`);
+  if (element) {
+    const yOffset = -70;
+    const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }
+};
 
-  elements.forEach((element) => {
-    element.addEventListener("click", () => {
-      const targetId = element.getAttribute("data-scroll-to");
-      const targetElement = document.getElementById(targetId);
-
-      if (targetElement) {
-        const yCoordinate =
-          targetElement.getBoundingClientRect().top +
-          window.pageYOffset +
-          offsetY;
-        window.scrollTo({ top: yCoordinate, behavior: "smooth" });
-      }
-    });
-  });
+export const scrollToElement = (id) => {
+  const element = document.querySelector(`[element-view-id="${id}"]`);
+  if (element) {
+    const yOffset = -70;
+    const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }
 };
