@@ -34,9 +34,12 @@ export const SmButton = ({ variant, buttonText, onClick }) => {
   }
 };
 
-export const ProductsButton = ({ buttonText, onClick }) => {
+export const ProductsButton = ({ buttonText, isActive, onClick }) => {
   return (
-    <button className={styles.productsButton} onClick={onClick}>
+    <button
+      className={`${styles.productsButton} ${isActive ? styles.active : ""}`}
+      onClick={onClick}
+    >
       <b className={styles.productsButtonText}>{buttonText}</b>
     </button>
   );

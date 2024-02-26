@@ -1,36 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
+import { albums } from "@/utils/data";
 import { GalleryButton } from "@/components/buttons";
 import styles from "@/styles/Home.module.css";
-
-const albums = [
-  {
-    id: 1,
-    name: "Cocoa Manufacturer",
-    images: Array.from({ length: 5 }, (_, i) => `Album 1 Image ${i + 1}`),
-  },
-  {
-    id: 2,
-    name: "Coffee Manufacturer",
-    images: Array.from({ length: 5 }, (_, i) => `Album 2 Image ${i + 1}`),
-  },
-  {
-    id: 3,
-    name: "Export Shipment",
-    images: Array.from({ length: 14 }, (_, i) => `Album 3 Image ${i + 1}`),
-  },
-  {
-    id: 4,
-    name: "Cocoa Farmers",
-    images: Array.from({ length: 3 }, (_, i) => `Album 4 Image ${i + 1}`),
-  },
-  {
-    id: 5,
-    name: "Coffee Farmers",
-    images: Array.from({ length: 10 }, (_, i) => `Album 5 Image ${i + 1}`),
-  },
-];
 
 export function Gallery({ sectionId }) {
   const [selectedAlbum, setSelectedAlbum] = useState(albums[0]);

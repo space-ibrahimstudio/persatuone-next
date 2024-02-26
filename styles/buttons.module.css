@@ -59,6 +59,11 @@
   background-color: var(--color-white-10);
 }
 
+.productsButton.active {
+  border: 1px solid var(--color-red);
+  background-color: var(--color-red);
+}
+
 .lgButtonHollowText {
   position: relative;
   font-size: var(--font-xsmall);

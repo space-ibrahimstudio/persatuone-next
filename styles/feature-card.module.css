@@ -42,14 +42,12 @@
   border-radius: var(--br-20);
   box-shadow: inset 0 0 0 0 var(--color-green);
   background-color: var(--color-black-70);
-  height: var(--pixel-210);
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   padding: var(--padd-20);
   gap: var(--pixel-20) 0;
   min-width: var(--pixel-320);
-  max-width: var(--pixel-350);
   text-align: left;
   font-size: var(--font-small);
   color: var(--color-white);
@@ -63,4 +61,11 @@
   transform: translateY(-5px);
   box-shadow: inset 0 0 0 1px var(--color-red);
   background-color: var(--color-red-50);
+}
+
+@media (min-width: 517px) {
+  .featureCard {
+    height: var(--pixel-210);
+    max-width: var(--pixel-350);
+  }
 }

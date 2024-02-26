@@ -1,9 +1,14 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { ProductsButton } from "@/components/buttons";
+import { categories, productsData } from "@/utils/data";
 import { CocoaCard, CoffeeCard } from "@/components/cards";
 import styles from "@/styles/Home.module.css";
 
 export function Products({ sectionId }) {
+  const [selectedCategory, setSelectedCategory] = useState(0);
+
   return (
     <>
       <section
@@ -22,23 +27,25 @@ export function Products({ sectionId }) {
         </div>
         <div className={styles.coaproductsBody}>
           <div className={styles.coaproductsTab}>
-            <ProductsButton buttonText="Low Fat Series" />
-            <ProductsButton buttonText="Standard Series" />
-            <ProductsButton buttonText="Premium Series" />
-            <ProductsButton buttonText="Black Series" />
+            {categories.map((category, index) => (
+              <ProductsButton
+                key={index}
+                onClick={() => setSelectedCategory(index)}
+                buttonText={category}
+                isActive={index === selectedCategory}
+              />
+            ))}
           </div>
           <div className={styles.coaproductsBody}>
-            <CocoaCard
-              imageUrl="/img/img-13.webp"
-              cardTitle="CT700 Low Fat Alkalized"
-              cardDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut lectus dui. Nullam vulputate commodo euismod."
-            />
-            <CocoaCard
-              variant="revert"
-              imageUrl="/img/img-18.webp"
-              cardTitle="CT700N Low Fat Natural"
-              cardDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut lectus dui. Nullam vulputate commodo euismod."
-            />
+            {productsData[selectedCategory].map((product, index) => (
+              <CocoaCard
+                key={index}
+                variant={index % 2 === 0 ? "" : "revert"}
+                imageUrl={product.imageUrl}
+                cardTitle={product.cardTitle}
+                cardDesc={product.cardDesc}
+              />
+            ))}
           </div>
         </div>
       </section>
