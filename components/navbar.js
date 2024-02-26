@@ -174,7 +174,7 @@ export function Navbar({ componentId }) {
               alt={componentId}
               style={{
                 width: "auto",
-                height: "var(--pixel-25)",
+                height: "var(--pixel-20)",
                 position: "relative",
               }}
             />

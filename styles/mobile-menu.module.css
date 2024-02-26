@@ -57,7 +57,7 @@
 .menuButtonText {
   flex: 1;
   position: relative;
-  font-size: 20px;
+  font-size: var(--font-medium);
   font-weight: 600;
   font-family: var(--font-noto);
   color: inherit;
@@ -154,7 +154,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 10px 0;
-  font-size: 15.7px;
+  font-size: var(--font-small);
   color: var(--color-darkbrown-80);
   font-family: var(--font-noto);
 }
@@ -162,7 +162,7 @@
 .menuCtaText {
   flex: 1;
   position: relative;
-  font-size: 20px;
+  font-size: var(--font-medium);
   font-weight: 600;
   font-family: var(--font-noto);
   color: var(--color-white);
@@ -207,7 +207,6 @@
   box-sizing: border-box;
   gap: 25px 0;
   text-align: left;
-  font-size: 18px;
   color: var(--color-red);
   z-index: 1002;
   animation-name: slideFromRight;
