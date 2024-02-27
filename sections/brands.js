@@ -31,7 +31,7 @@ export function Brands({ sectionId }) {
   };
 
   const cofeeLink = () => {
-    const link = "https://www.celcogroup.com";
+    const link = "https://www.celcogroup.com/en/englishhomepage";
     window.open(link, "_blank");
   };
 
