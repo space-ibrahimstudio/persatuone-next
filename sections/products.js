@@ -58,8 +58,8 @@ export function Products({ sectionId }) {
           <h2 className={styles.herSubtitle}>OUR PRODUCTS</h2>
           <h1 className={styles.brandsTitle}>Coffee Products</h1>
           <p className={styles.heroDesc}>
-            We offer you high quality cocoa powder produced from the best
-            fermented Indonesian and African cocoa beans.
+            We offer you high quality coffee produced from the best fermented
+            Indonesian coffee beans.
           </p>
         </div>
         <div className={styles.cofproductsBody}>

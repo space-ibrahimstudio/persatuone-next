@@ -435,6 +435,7 @@
   font-size: var(--font-large);
   color: var(--color-red);
   font-family: var(--font-jakarta);
+  background-color: var(--color-red-5);
 }
 
 .brandsImage {

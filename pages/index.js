@@ -21,7 +21,8 @@ export default function Home() {
     <>
       <Head>
         <title>
-          Persatu.one | Cocoa manufacturers and Coffee roaster from Indonesia
+          Finest Cocoa Powder Supplier from Indonesia - Persatu.one - Komoditas
+          Indonesia
         </title>
         <meta
           name="description"
