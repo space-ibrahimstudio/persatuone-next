@@ -10,50 +10,50 @@ export const productsData = [
     {
       imageUrl: "/img/img-13.webp",
       cardTitle: "CT700 Low Fat Alkalized",
-      cardDesc:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut lectus dui. Nullam vulputate commodo euismod.",
+      cardDesc: "Fat Content: 8-10% | pH: 6.8 - 7.2",
+      cardCta: "Contact us for more information",
     },
     {
       imageUrl: "/img/img-18.webp",
       cardTitle: "CT700N Low Fat Natural",
-      cardDesc:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut lectus dui. Nullam vulputate commodo euismod.",
+      cardDesc: "Fat Content: 8-10% | pH: 5-6",
+      cardCta: "Contact us for more information",
     },
   ],
   [
     {
       imageUrl: "/img/img-14.webp",
       cardTitle: "CT800 Standard Alkalized",
-      cardDesc:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut lectus dui. Nullam vulputate commodo euismod.",
+      cardDesc: "Fat Content: 810-12% | pH: 6.8-7.2",
+      cardCta: "Contact us for more information",
     },
     {
       imageUrl: "/img/img-13.webp",
       cardTitle: "CT800N Standard Natural",
-      cardDesc:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut lectus dui. Nullam vulputate commodo euismod.",
+      cardDesc: "Fat Content: 8-10% | pH: 5.4-6.7",
+      cardCta: "Contact us for more information",
     },
   ],
   [
     {
       imageUrl: "/img/img-18.webp",
       cardTitle: "CT900 Premium Alkalized",
-      cardDesc:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut lectus dui. Nullam vulputate commodo euismod.",
+      cardDesc: "Fat Content: 10-12% | pH: 6.8-7.2",
+      cardCta: "Contact us for more information",
     },
     {
       imageUrl: "/img/img-14.webp",
       cardTitle: "CT900N Premium Natural",
-      cardDesc:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut lectus dui. Nullam vulputate commodo euismod.",
+      cardDesc: "Fat Content: 10-12% | pH: 6",
+      cardCta: "Contact us for more information",
     },
   ],
   [
     {
       imageUrl: "/img/img-13.webp",
       cardTitle: "CT1000 Black",
-      cardDesc:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut lectus dui. Nullam vulputate commodo euismod.",
+      cardDesc: "Fat Content: 10-12% | pH: 7.0-8.5",
+      cardCta: "Contact us for more information",
     },
   ],
 ];

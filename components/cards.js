@@ -60,7 +60,13 @@ export const FactoryCard = ({ variant, cardTitle, cardDesc, imageUrl }) => {
   }
 };
 
-export const CocoaCard = ({ variant, cardTitle, cardDesc, imageUrl }) => {
+export const CocoaCard = ({
+  variant,
+  cardTitle,
+  cardDesc,
+  cardCta,
+  imageUrl,
+}) => {
   if (variant === "revert") {
     return (
       <section
@@ -76,6 +82,9 @@ export const CocoaCard = ({ variant, cardTitle, cardDesc, imageUrl }) => {
         <div className={cocoa.productCardHeading}>
           <h1 className={cocoa.productCardTitle}>{cardTitle}</h1>
           <p className={cocoa.productCardDesc}>{cardDesc}</p>
+          <p className={cocoa.productCardDesc} style={{ fontWeight: "300" }}>
+            {cardCta}
+          </p>
         </div>
       </section>
     );
@@ -85,6 +94,9 @@ export const CocoaCard = ({ variant, cardTitle, cardDesc, imageUrl }) => {
         <div className={cocoa.productCardHeading}>
           <h1 className={cocoa.productCardTitle}>{cardTitle}</h1>
           <p className={cocoa.productCardDesc}>{cardDesc}</p>
+          <p className={cocoa.productCardDesc} style={{ fontWeight: "300" }}>
+            {cardCta}
+          </p>
         </div>
         <img
           className={cocoa.productCardImage}

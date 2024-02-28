@@ -20,12 +20,12 @@ export function Gallery({ sectionId }) {
     >
       <div className={styles.facilityHeading}>
         <h1 className={styles.factoryTitle}>Our Gallery</h1>
-        <p className={styles.aboutDesc}>
+        {/* <p className={styles.aboutDesc}>
           We offer you high quality cocoa powder produced from organic, fine,
           and fermented Indonesian cocoa beans. we accept customized cocoa
           powder as your needs and request, such like product color and chemical
           properties (pH value).
-        </p>
+        </p> */}
       </div>
       <div className={styles.galleryBody}>
         <div className={styles.galleryTab}>

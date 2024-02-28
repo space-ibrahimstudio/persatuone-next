@@ -11,12 +11,10 @@ export function Facility({ sectionId }) {
       style={{ backgroundImage: "url(/img/facility-bg.jpg)" }}
     >
       <div className={styles.facilityHeading}>
-        <h1 className={styles.factoryTitle}>Our Facility</h1>
+        <h1 className={styles.factoryTitle}>Our Facilities</h1>
         <p className={styles.facilityDesc}>
-          We offer you high quality cocoa powder produced from organic, fine,
-          and fermented Indonesian cocoa beans. we accept customized cocoa
-          powder as your needs and request, such like product color and chemical
-          properties (pH value).
+          All our factory facilities are dedicated to ensuring the satisfaction
+          of our customers worldwide.
         </p>
       </div>
       <div className={styles.facilityBody}>

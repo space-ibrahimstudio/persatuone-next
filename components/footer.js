@@ -36,7 +36,7 @@ export function Footer({ componentId }) {
               onClick={() => scrollToElement("facility-section")}
               className={styles.footerMenuLink}
             >
-              Our facility
+              Our facilities
             </h2>
             <h2
               onClick={() => scrollToElement("why-section")}
@@ -69,7 +69,7 @@ export function Footer({ componentId }) {
               onClick={() => scrollToElement("certi-section")}
               className={styles.footerMenuLink}
             >
-              Cetifications
+              Certifications
             </h2>
             <h2
               onClick={() => scrollToSection("our-brands")}

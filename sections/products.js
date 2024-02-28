@@ -44,6 +44,7 @@ export function Products({ sectionId }) {
                 imageUrl={product.imageUrl}
                 cardTitle={product.cardTitle}
                 cardDesc={product.cardDesc}
+                cardCta={product.cardCta}
               />
             ))}
           </div>
@@ -58,8 +59,8 @@ export function Products({ sectionId }) {
           <h2 className={styles.herSubtitle}>OUR PRODUCTS</h2>
           <h1 className={styles.brandsTitle}>Coffee Products</h1>
           <p className={styles.heroDesc}>
-            We offer you high quality coffee produced from the best fermented
-            Indonesian coffee beans.
+            We offer you high quality coffee products, produced from the best
+            Arabica and Robusta Indonesian coffee beans.
           </p>
         </div>
         <div className={styles.cofproductsBody}>
