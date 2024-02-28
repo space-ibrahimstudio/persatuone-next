@@ -19,25 +19,27 @@ export function Contact({ sectionId }) {
             Please contact us to know more about our company, products, and
             sample request.
           </p>
-          <p
-            className={styles.contactDesc}
-            style={{ fontSize: "var(--font-xsmall)", fontWeight: "500" }}
-          >
-            Phone Number: +62 821 2227 9540
-          </p>
-          <p
-            className={styles.contactDesc}
-            style={{ fontSize: "var(--font-xsmall)", fontWeight: "500" }}
-          >
-            Email: sales@persatu.one | sales@cartenzcocoa.com
-          </p>
-          <p
-            className={styles.contactDesc}
-            style={{ fontSize: "var(--font-xsmall)", fontWeight: "500" }}
-          >
-            Marketing Office: Ruko North Sorrento Square, Jalan Ir. Sukarno
-            No.3, Pagedangan, Tangerang, Banten, Indonesia, 15332
-          </p>
+          <div className={styles.contactOption}>
+            <p
+              className={styles.contactDesc}
+              style={{ fontSize: "var(--font-xsmall)", fontWeight: "500" }}
+            >
+              Phone Number: +62 821 2227 9540
+            </p>
+            <p
+              className={styles.contactDesc}
+              style={{ fontSize: "var(--font-xsmall)", fontWeight: "500" }}
+            >
+              Email: sales@persatu.one | sales@cartenzcocoa.com
+            </p>
+            <p
+              className={styles.contactDesc}
+              style={{ fontSize: "var(--font-xsmall)", fontWeight: "500" }}
+            >
+              Marketing Office: Ruko North Sorrento Square, Jalan Ir. Sukarno
+              No.3, Pagedangan, Tangerang, Banten, Indonesia, 15332
+            </p>
+          </div>
         </div>
         <div className={styles.contactForm}>
           <div className={styles.inputWrapper}>

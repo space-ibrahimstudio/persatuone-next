@@ -26,7 +26,7 @@ export default function Home() {
         </title>
         <meta
           name="description"
-          content="We are one of the leading cocoa manufacturers and coffee roaster from Indonesia. We are happy to grow with your business, to spread the beauty of Indonesian Commodities to the entire world!"
+          content="We are one of the leading COCOA POWDER manufacturer, SUPPLIER, and exporter from INDONESIA. We provide you the best quality of cocoa for your business!"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />

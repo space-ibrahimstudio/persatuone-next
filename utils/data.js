@@ -8,13 +8,13 @@ export const categories = [
 export const productsData = [
   [
     {
-      imageUrl: "/img/img-13.webp",
+      imageUrl: "/img/products/img-01.jpg",
       cardTitle: "CT700 Low Fat Alkalized",
       cardDesc: "Fat Content: 8-10% | pH: 6.8 - 7.2",
       cardCta: "Contact us for more information",
     },
     {
-      imageUrl: "/img/img-18.webp",
+      imageUrl: "/img/products/img-02.jpg",
       cardTitle: "CT700N Low Fat Natural",
       cardDesc: "Fat Content: 8-10% | pH: 5-6",
       cardCta: "Contact us for more information",
@@ -22,13 +22,13 @@ export const productsData = [
   ],
   [
     {
-      imageUrl: "/img/img-14.webp",
+      imageUrl: "/img/products/img-03.jpg",
       cardTitle: "CT800 Standard Alkalized",
       cardDesc: "Fat Content: 810-12% | pH: 6.8-7.2",
       cardCta: "Contact us for more information",
     },
     {
-      imageUrl: "/img/img-13.webp",
+      imageUrl: "/img/products/img-04.jpg",
       cardTitle: "CT800N Standard Natural",
       cardDesc: "Fat Content: 8-10% | pH: 5.4-6.7",
       cardCta: "Contact us for more information",
@@ -36,13 +36,13 @@ export const productsData = [
   ],
   [
     {
-      imageUrl: "/img/img-18.webp",
+      imageUrl: "/img/products/img-06.jpg",
       cardTitle: "CT900 Premium Alkalized",
       cardDesc: "Fat Content: 10-12% | pH: 6.8-7.2",
       cardCta: "Contact us for more information",
     },
     {
-      imageUrl: "/img/img-14.webp",
+      imageUrl: "/img/products/img-07.jpg",
       cardTitle: "CT900N Premium Natural",
       cardDesc: "Fat Content: 10-12% | pH: 6",
       cardCta: "Contact us for more information",
@@ -50,7 +50,7 @@ export const productsData = [
   ],
   [
     {
-      imageUrl: "/img/img-13.webp",
+      imageUrl: "/img/products/img-05.jpg",
       cardTitle: "CT1000 Black",
       cardDesc: "Fat Content: 10-12% | pH: 7.0-8.5",
       cardCta: "Contact us for more information",
