@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styles from "@/styles/buttons.module.css";
 
 export const LgButton = ({ hasIcon, buttonText, children, onClick }) => {
@@ -18,6 +19,13 @@ export const LgButton = ({ hasIcon, buttonText, children, onClick }) => {
   }
 };
 
+LgButton.propTypes = {
+  onClick: PropTypes.func,
+  buttonText: PropTypes.string,
+  hasIcon: PropTypes.string,
+  children: PropTypes.node,
+};
+
 export const SmButton = ({ variant, buttonText, onClick }) => {
   if (variant === "white") {
     return (
@@ -34,6 +42,12 @@ export const SmButton = ({ variant, buttonText, onClick }) => {
   }
 };
 
+SmButton.propTypes = {
+  onClick: PropTypes.func,
+  buttonText: PropTypes.string,
+  variant: PropTypes.string,
+};
+
 export const ProductsButton = ({ buttonText, isActive, onClick }) => {
   return (
     <button
@@ -45,6 +59,12 @@ export const ProductsButton = ({ buttonText, isActive, onClick }) => {
   );
 };
 
+ProductsButton.propTypes = {
+  onClick: PropTypes.func,
+  buttonText: PropTypes.string,
+  isActive: PropTypes.bool,
+};
+
 export const GalleryButton = ({ buttonText, isActive, onClick }) => {
   return (
     <button
@@ -54,6 +74,12 @@ export const GalleryButton = ({ buttonText, isActive, onClick }) => {
       <b className={styles.galleryButtonText}>{buttonText}</b>
     </button>
   );
+};
+
+GalleryButton.propTypes = {
+  onClick: PropTypes.func,
+  buttonText: PropTypes.string,
+  isActive: PropTypes.bool,
 };
 
 export const WhatsAppButton = () => {

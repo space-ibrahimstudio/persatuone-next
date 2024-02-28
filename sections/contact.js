@@ -1,8 +1,53 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { handleContactUs } from "@/pages/api/api";
 import { LgButton } from "@/components/buttons";
 import styles from "@/styles/Home.module.css";
 
 export function Contact({ sectionId }) {
+  const [inputData, setInputData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const [errors, setErrors] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+
+    setInputData((prevState) => {
+      return {
+        ...prevState,
+        [name]: value,
+      };
+    });
+
+    setErrors((prevErrors) => {
+      return { ...prevErrors, [name]: "" };
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      await handleContactUs(inputData);
+    } catch (error) {
+      console.error("Error occurred during submit reservation:", error);
+    }
+  };
+
   return (
     <section
       id={sectionId}
@@ -48,6 +93,9 @@ export function Contact({ sectionId }) {
                 className={styles.iputField}
                 placeholder="Your Name*"
                 type="text"
+                name="name"
+                value={inputData.name}
+                onChange={handleInputChange}
               />
             </div>
             <div className={styles.input}>
@@ -55,6 +103,9 @@ export function Contact({ sectionId }) {
                 className={styles.iputField}
                 placeholder="Your Email*"
                 type="email"
+                name="email"
+                value={inputData.email}
+                onChange={handleInputChange}
               />
             </div>
           </div>
@@ -64,6 +115,9 @@ export function Contact({ sectionId }) {
                 className={styles.iputField}
                 placeholder="Phone Number"
                 type="tel"
+                name="phone"
+                value={inputData.phone}
+                onChange={handleInputChange}
               />
             </div>
             <div className={styles.input}>
@@ -71,6 +125,9 @@ export function Contact({ sectionId }) {
                 className={styles.iputField}
                 placeholder="Subject"
                 type="text"
+                name="subject"
+                value={inputData.subject}
+                onChange={handleInputChange}
               />
             </div>
           </div>
@@ -78,11 +135,22 @@ export function Contact({ sectionId }) {
             <textarea
               className={styles.iputField4}
               placeholder="Write message"
+              name="message"
+              value={inputData.message}
+              onChange={handleInputChange}
             />
           </div>
-          <LgButton buttonText="Send Messages" color="yellow" />
+          <LgButton
+            buttonText="Send Messages"
+            color="yellow"
+            onClick={handleSubmit}
+          />
         </div>
       </div>
     </section>
   );
 }
+
+Contact.propTypes = {
+  sectionId: PropTypes.string,
+};

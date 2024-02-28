@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import { albums } from "@/utils/data";
 import { GalleryButton } from "@/components/buttons";
 import styles from "@/styles/Home.module.css";
@@ -53,3 +54,7 @@ export function Gallery({ sectionId }) {
     </section>
   );
 }
+
+Gallery.propTypes = {
+  sectionId: PropTypes.string,
+};

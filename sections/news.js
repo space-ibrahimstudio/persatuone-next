@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { NewsCard } from "@/components/cards";
 import styles from "@/styles/Home.module.css";
 
@@ -38,3 +39,7 @@ export function News({ sectionId }) {
     </section>
   );
 }
+
+News.propTypes = {
+  sectionId: PropTypes.string,
+};

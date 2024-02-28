@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
+import PropTypes from "prop-types";
 import { LgButton } from "@/components/buttons";
 import styles from "@/styles/Home.module.css";
 
@@ -149,3 +150,7 @@ export function Brands({ sectionId }) {
     </>
   );
 }
+
+Brands.propTypes = {
+  sectionId: PropTypes.string,
+};

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styles from "@/styles/Home.module.css";
 
 export function About({ sectionId }) {
@@ -30,3 +31,7 @@ export function About({ sectionId }) {
     </section>
   );
 }
+
+About.propTypes = {
+  sectionId: PropTypes.string,
+};

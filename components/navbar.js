@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import PropTypes from "prop-types";
 import { scrollToSection } from "@/utils/handler";
 import { SmButton } from "./buttons";
 import styles from "@/styles/Home.module.css";
@@ -14,6 +15,12 @@ export const SocialIcon = ({ id, iconSrc, onClick }) => {
       </div>
     </div>
   );
+};
+
+SocialIcon.propTypes = {
+  id: PropTypes.string,
+  iconSrc: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 export function Navbar({ componentId }) {
@@ -192,6 +199,10 @@ export function Navbar({ componentId }) {
   );
 }
 
+Navbar.propTypes = {
+  componentId: PropTypes.string,
+};
+
 const MobileMenu = ({ componentId, activeTab, onClose }) => {
   const [isClosing, setIsClosing] = useState(false);
   const ref = useRef(null);
@@ -334,4 +345,10 @@ const MobileMenu = ({ componentId, activeTab, onClose }) => {
       ></div>
     </>
   );
+};
+
+MobileMenu.propTypes = {
+  componentId: PropTypes.string,
+  activeTab: PropTypes.string,
+  onClose: PropTypes.func,
 };

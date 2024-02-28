@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import styles from "@/styles/Home.module.css";
 import ftr from "@/styles/feature-card.module.css";
 import fctr from "@/styles/factory-card.module.css";
@@ -24,6 +25,11 @@ export const FeatureCard = ({ cardText, iconSrc }) => {
       </div>
     </section>
   );
+};
+
+FeatureCard.propTypes = {
+  cardText: PropTypes.string,
+  iconSrc: PropTypes.string,
 };
 
 export const FactoryCard = ({ variant, cardTitle, cardDesc, imageUrl }) => {
@@ -58,6 +64,13 @@ export const FactoryCard = ({ variant, cardTitle, cardDesc, imageUrl }) => {
       </section>
     );
   }
+};
+
+FactoryCard.propTypes = {
+  variant: PropTypes.string,
+  cardTitle: PropTypes.string,
+  cardDesc: PropTypes.string,
+  imageUrl: PropTypes.string,
 };
 
 export const CocoaCard = ({
@@ -109,6 +122,14 @@ export const CocoaCard = ({
   }
 };
 
+CocoaCard.propTypes = {
+  variant: PropTypes.string,
+  cardTitle: PropTypes.string,
+  cardDesc: PropTypes.string,
+  cardCta: PropTypes.string,
+  imageUrl: PropTypes.string,
+};
+
 export const CoffeeCard = ({ imageUrl, cardTitle }) => {
   return (
     <section className={coffee.coffeeCard}>
@@ -121,6 +142,11 @@ export const CoffeeCard = ({ imageUrl, cardTitle }) => {
       <h1 className={coffee.coffeeCardText}>{cardTitle}</h1>
     </section>
   );
+};
+
+CoffeeCard.propTypes = {
+  cardTitle: PropTypes.string,
+  imageUrl: PropTypes.string,
 };
 
 export const NewsCard = ({
@@ -165,6 +191,14 @@ export const NewsCard = ({
   );
 };
 
+NewsCard.propTypes = {
+  cardTitle: PropTypes.string,
+  cardDesc: PropTypes.string,
+  cardDate: PropTypes.string,
+  cardComments: PropTypes.string,
+  imageUrl: PropTypes.string,
+};
+
 export const FeatureCount = ({ finalCount, units, description }) => {
   const [count, setCount] = useState(0);
 
@@ -193,4 +227,10 @@ export const FeatureCount = ({ finalCount, units, description }) => {
       <h6 className={styles.featureContentDesc}>{description}</h6>
     </div>
   );
+};
+
+FeatureCount.propTypes = {
+  finalCount: PropTypes.number,
+  units: PropTypes.string,
+  description: PropTypes.string,
 };

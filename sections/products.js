@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import { ProductsButton } from "@/components/buttons";
 import { categories, productsData } from "@/utils/data";
 import { CocoaCard, CoffeeCard } from "@/components/cards";
@@ -85,3 +86,7 @@ export function Products({ sectionId }) {
     </>
   );
 }
+
+Products.propTypes = {
+  sectionId: PropTypes.string,
+};

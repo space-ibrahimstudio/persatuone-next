@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { scrollToSection, scrollToElement } from "@/utils/handler";
 import styles from "@/styles/Home.module.css";
 
@@ -106,3 +107,7 @@ export function Footer({ componentId }) {
     </footer>
   );
 }
+
+Footer.propTypes = {
+  componentId: PropTypes.string,
+};

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { FeatureCard } from "@/components/cards";
 import styles from "@/styles/Home.module.css";
 
@@ -42,3 +43,7 @@ export function Facility({ sectionId }) {
     </section>
   );
 }
+
+Facility.propTypes = {
+  sectionId: PropTypes.string,
+};
