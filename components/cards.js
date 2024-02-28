@@ -1,6 +1,4 @@
-"use client";
-
-import React, { useState, useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import styles from "@/styles/Home.module.css";
 import ftr from "@/styles/feature-card.module.css";
@@ -200,28 +198,28 @@ NewsCard.propTypes = {
 };
 
 export const FeatureCount = ({ finalCount, units, description }) => {
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    const duration = 1000;
-    const increment = Math.ceil(finalCount / (duration / 100));
+  // useEffect(() => {
+  //   const duration = 1000;
+  //   const increment = Math.ceil(finalCount / (duration / 100));
 
-    const interval = setInterval(() => {
-      if (count < finalCount) {
-        setCount((prevCount) => prevCount + increment);
-      } else {
-        setCount(finalCount);
-        clearInterval(interval);
-      }
-    }, 100);
+  //   const interval = setInterval(() => {
+  //     if (count < finalCount) {
+  //       setCount((prevCount) => prevCount + increment);
+  //     } else {
+  //       setCount(finalCount);
+  //       clearInterval(interval);
+  //     }
+  //   }, 100);
 
-    return () => clearInterval(interval);
-  }, [count, finalCount]);
+  //   return () => clearInterval(interval);
+  // }, [count, finalCount]);
 
   return (
     <div className={styles.featureContent}>
       <h1 className={styles.featureContentTitle}>
-        {count}
+        {finalCount}
         {units}
       </h1>
       <h6 className={styles.featureContentDesc}>{description}</h6>
@@ -230,7 +228,7 @@ export const FeatureCount = ({ finalCount, units, description }) => {
 };
 
 FeatureCount.propTypes = {
-  finalCount: PropTypes.number,
+  finalCount: PropTypes.string,
   units: PropTypes.string,
   description: PropTypes.string,
 };
