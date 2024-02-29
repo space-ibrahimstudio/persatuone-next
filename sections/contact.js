@@ -23,28 +23,73 @@ export function Contact({ sectionId }) {
     message: "",
   });
 
+  const [success, setSuccess] = useState(false);
+
+  const cleanInput = () => {
+    setInputData({
+      name: "",
+      phone: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
+  };
+
+  const validateStep = () => {
+    const newErrors = {};
+    let isValid = true;
+
+    if (inputData.name.trim() === "") {
+      newErrors.name = "Please fill in all forms completely";
+      isValid = false;
+    }
+    if (inputData.phone.trim() === "") {
+      newErrors.phone = "Please fill in all forms completely";
+      isValid = false;
+    }
+    if (inputData.email.trim() === "") {
+      newErrors.email = "Please fill in all forms completely";
+      isValid = false;
+    }
+    if (inputData.subject.trim() === "") {
+      newErrors.subject = "Please fill in all forms completely";
+      isValid = false;
+    }
+    if (inputData.message.trim() === "") {
+      newErrors.message = "Please fill in all forms completely";
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
+  };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-
-    setInputData((prevState) => {
-      return {
-        ...prevState,
-        [name]: value,
-      };
+    setErrors({
+      ...errors,
+      [name]: "",
     });
 
-    setErrors((prevErrors) => {
-      return { ...prevErrors, [name]: "" };
+    setInputData({
+      ...inputData,
+      [name]: value,
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      await handleContactUs(inputData);
-    } catch (error) {
-      console.error("Error occurred during submit reservation:", error);
+    if (validateStep()) {
+      try {
+        await handleContactUs(inputData);
+        cleanInput();
+        setSuccess(true);
+      } catch (error) {
+        console.error("Error occurred during submit reservation:", error);
+      }
+    } else {
+      setSuccess(false);
     }
   };
 
@@ -140,9 +185,21 @@ export function Contact({ sectionId }) {
               onChange={handleInputChange}
             />
           </div>
+          {errors && (
+            <p className={styles.errorMsg}>
+              {errors.name ||
+                errors.phone ||
+                errors.email ||
+                errors.subject ||
+                errors.message}
+            </p>
+          )}
+          {success && (
+            <p className={styles.errorMsg}>Message sent successfully.</p>
+          )}
           <LgButton
+            variant="dark"
             buttonText="Send Messages"
-            color="yellow"
             onClick={handleSubmit}
           />
         </div>

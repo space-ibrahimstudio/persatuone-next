@@ -702,6 +702,15 @@
   font-weight: 600;
 }
 
+.errorMsg {
+  font-size: var(--font-xsmall);
+  position: relative;
+  align-self: stretch;
+  margin: 0;
+  color: var(--color-yellow);
+  font-weight: 600;
+}
+
 .iputField {
   border: 0;
   outline: 0;

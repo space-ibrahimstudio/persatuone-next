@@ -27,17 +27,17 @@ export function Hero({ sectionId }) {
       </div>
       <div className={styles.feature}>
         <FeatureCount
-          finalCount="50"
+          finalCount={50}
           units="+"
           description="Overseas Partners"
         />
         <FeatureCount
-          finalCount="10"
+          finalCount={10}
           units="+"
           description="Export Destination Countries"
         />
         <FeatureCount
-          finalCount="99"
+          finalCount={99}
           units="%"
           description="Customer Satisfaction"
         />

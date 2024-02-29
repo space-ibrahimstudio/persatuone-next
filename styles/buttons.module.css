@@ -122,6 +122,23 @@
   transition: all 0.3s ease-in-out;
 }
 
+.lgButtonDark {
+  cursor: pointer;
+  border: 1px solid var(--color-darkred);
+  padding: var(--padd-0x20);
+  color: var(--color-white);
+  background-color: var(--color-darkred);
+  border-radius: var(--br-12);
+  height: var(--pixel-50);
+  flex-direction: row;
+  transition: all 0.3s ease-in-out;
+}
+
+.lgButtonDark:hover {
+  border: 1px solid var(--color-yellow);
+  background-color: var(--color-yellow);
+}
+
 .lgButton:hover {
   color: var(--color-white);
   border: 1px solid var(--color-yellow);
@@ -129,6 +146,7 @@
 }
 
 .lgButton,
+.lgButtonDark,
 .smButton,
 .smButtonWhite {
   display: flex;
