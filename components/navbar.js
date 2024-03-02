@@ -216,6 +216,21 @@ const MobileMenu = ({ componentId, activeTab, onClose }) => {
     setIsClosing(true);
   };
 
+  const igLink = () => {
+    const link = "https://www.instagram.com/persatu.one";
+    window.open(link, "_blank");
+  };
+
+  const liLink = () => {
+    const link = "https://www.linkedin.com/company/persatu-one-indonesia";
+    window.open(link, "_blank");
+  };
+
+  const fbLink = () => {
+    const link = "https://www.facebook.com/profile.php?id=100083610881443";
+    window.open(link, "_blank");
+  };
+
   useEffect(() => {
     if (isClosing) {
       const animationDuration = 500;
@@ -312,10 +327,23 @@ const MobileMenu = ({ componentId, activeTab, onClose }) => {
         <div className={menu.menuSocial}>
           <div className={menu.menuSocialTitle}>Connect Socially :</div>
           <div className={menu.menuSocialIcon}>
-            <SocialIcon id="facebook" iconSrc="/svg/fb-icon.svg" />
-            <SocialIcon id="instagram" iconSrc="/svg/ig-icon.svg" />
-            <SocialIcon id="twitter" iconSrc="/svg/twitter-icon.svg" />
-            <SocialIcon id="youtube" iconSrc="/svg/yt-icon.svg" />
+            <SocialIcon
+              id="facebook"
+              iconSrc="/svg/fb-icon.svg"
+              onClick={fbLink}
+            />
+            <SocialIcon
+              id="instagram"
+              iconSrc="/svg/ig-icon.svg"
+              onClick={igLink}
+            />
+            <SocialIcon
+              id="linkedin"
+              iconSrc="/svg/li-icon.svg"
+              onClick={liLink}
+            />
+            {/* <SocialIcon id="twitter" iconSrc="/svg/twitter-icon.svg" />
+            <SocialIcon id="youtube" iconSrc="/svg/yt-icon.svg" /> */}
           </div>
         </div>
         <button

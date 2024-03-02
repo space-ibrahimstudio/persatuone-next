@@ -24,7 +24,7 @@ export const productsData = [
     {
       imageUrl: "/img/products/img-03.jpg",
       cardTitle: "CT800 Standard Alkalized",
-      cardDesc: "Fat Content: 810-12% | pH: 6.8-7.2",
+      cardDesc: "Fat Content: 10-12% | pH: 6.8-7.2",
       cardCta: "Contact us for more information",
     },
     {

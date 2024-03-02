@@ -97,7 +97,7 @@ GalleryButton.propTypes = {
 export const WhatsAppButton = () => {
   const waLink = () => {
     const link =
-      "https://web.whatsapp.com/send?phone=6282122279540&text=Hi%2C%20Saya%20Ingin%20Order";
+      "https://wa.me/6282122279540?text=Hi%2C%20Saya%20Ingin%20Order";
     window.open(link, "_blank");
   };
 

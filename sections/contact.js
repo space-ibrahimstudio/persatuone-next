@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { handleContactUs } from "@/pages/api/api";
 import { LgButton } from "@/components/buttons";
 import styles from "@/styles/Home.module.css";
 
@@ -82,11 +81,22 @@ export function Contact({ sectionId }) {
 
     if (validateStep()) {
       try {
-        await handleContactUs(inputData);
-        cleanInput();
-        setSuccess(true);
+        const response = await fetch("/api/sendEmail", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(inputData),
+        });
+        if (response.ok) {
+          cleanInput();
+          setSuccess(true);
+        } else {
+          alert("Failed to send email.");
+        }
       } catch (error) {
-        console.error("Error occurred during submit reservation:", error);
+        console.error("Error:", error);
+        alert("Failed to send email.");
       }
     } else {
       setSuccess(false);

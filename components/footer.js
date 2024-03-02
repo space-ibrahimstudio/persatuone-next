@@ -4,6 +4,21 @@ import { scrollToSection, scrollToElement } from "@/utils/handler";
 import styles from "@/styles/Home.module.css";
 
 export function Footer({ componentId }) {
+  const igLink = () => {
+    const link = "https://www.instagram.com/persatu.one";
+    window.open(link, "_blank");
+  };
+
+  const liLink = () => {
+    const link = "https://www.linkedin.com/company/persatu-one-indonesia";
+    window.open(link, "_blank");
+  };
+
+  const fbLink = () => {
+    const link = "https://www.facebook.com/profile.php?id=100083610881443";
+    window.open(link, "_blank");
+  };
+
   return (
     <footer id={componentId} className={styles.footer}>
       <div className={styles.footerNav}>
@@ -87,17 +102,21 @@ export function Footer({ componentId }) {
           </div>
           <div className={styles.footerMenuWrapper}>
             <h1 className={styles.footerMenuTitle}>Socials</h1>
-            <h2 className={styles.footerMenuLink}>Facebook</h2>
-            <h2 className={styles.footerMenuLink}>Instagram</h2>
-            <h2 className={styles.footerMenuLink}>Twitter</h2>
-            <h2 className={styles.footerMenuLink}>YouTube</h2>
-            <h2 className={styles.footerMenuLink}>LinkedIn</h2>
+            <h2 className={styles.footerMenuLink} onClick={fbLink}>
+              Facebook
+            </h2>
+            <h2 className={styles.footerMenuLink} onClick={igLink}>
+              Instagram
+            </h2>
+            <h2 className={styles.footerMenuLink} onClick={liLink}>
+              LinkedIn
+            </h2>
           </div>
         </div>
       </div>
       <div className={styles.footerFooter}>
         <h1 className={styles.footerMenuLink}>
-          2024 Persatu.one. All right reserved.
+          © 2024 Persatu.one. All right reserved.
         </h1>
         <div className={styles.footerPptnc}>
           <h2 className={styles.footerMenuLink}>Privacy Policy</h2>
