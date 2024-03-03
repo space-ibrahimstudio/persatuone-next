@@ -774,6 +774,7 @@
   flex: 1;
   flex-direction: row;
   align-items: center;
+  height: var(--pixel-125);
   padding: var(--padd-10);
   color: var(--color-brown);
   transition: all 0.3s ease-in-out;

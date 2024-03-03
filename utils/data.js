@@ -30,7 +30,7 @@ export const productsData = [
     {
       imageUrl: "/img/products/img-04.jpg",
       cardTitle: "CT800N Standard Natural",
-      cardDesc: "Fat Content: 8-10% | pH: 5.4-6.7",
+      cardDesc: "Fat Content: 10-12% | pH: 5.4-6.7",
       cardCta: "Contact us for more information",
     },
   ],

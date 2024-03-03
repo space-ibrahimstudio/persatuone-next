@@ -20,11 +20,22 @@ export function Certifications({ sectionId }) {
         <img
           style={{
             position: "relative",
-            width: "var(--pixel-70)",
+            width: "var(--pixel-95)",
             height: "auto",
           }}
           src="/svg/iso-icon.svg"
           alt="iso certified"
+          loading="lazy"
+        />
+        <img
+          style={{
+            position: "relative",
+            width: "var(--pixel-95)",
+            height: "auto",
+            mixBlendMode: "multiply",
+          }}
+          src="/img/haccp.jpg"
+          alt="haccp"
           loading="lazy"
         />
         <img

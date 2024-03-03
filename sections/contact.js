@@ -111,7 +111,7 @@ export function Contact({ sectionId }) {
       style={{ backgroundImage: "url(/img/img-18.webp)" }}
     >
       <div className={styles.contactCard}>
-        <div className={styles.aboutHeading}>
+        <div className={styles.aboutHeading} style={{ gap: "var(--pixel-30)" }}>
           <h1 className={styles.contactTitle}>
             Be Our Distributor in Your Country
           </h1>
@@ -120,25 +120,85 @@ export function Contact({ sectionId }) {
             sample request.
           </p>
           <div className={styles.contactOption}>
-            <p
-              className={styles.contactDesc}
-              style={{ fontSize: "var(--font-xsmall)", fontWeight: "500" }}
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "flex-start",
+                alignSelf: "stretch",
+                gap: "var(--pixel-10)",
+              }}
             >
-              Phone Number: +62 821 2227 9540
-            </p>
-            <p
-              className={styles.contactDesc}
-              style={{ fontSize: "var(--font-xsmall)", fontWeight: "500" }}
+              <img
+                style={{
+                  position: "relative",
+                  height: "auto",
+                  width: "var(--pixel-18)",
+                }}
+                alt="phone"
+                src="/svg/phone.svg"
+              />
+              <p
+                className={styles.contactDesc}
+                style={{ fontSize: "var(--font-xsmall)", fontWeight: "400" }}
+              >
+                +62 821 2227 9540
+              </p>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "flex-start",
+                alignSelf: "stretch",
+                gap: "var(--pixel-10)",
+              }}
             >
-              Email: sales@persatu.one | sales@cartenzcocoa.com
-            </p>
-            <p
-              className={styles.contactDesc}
-              style={{ fontSize: "var(--font-xsmall)", fontWeight: "500" }}
+              <img
+                style={{
+                  position: "relative",
+                  height: "auto",
+                  width: "var(--pixel-18)",
+                }}
+                alt="phone"
+                src="/svg/mail.svg"
+              />
+              <p
+                className={styles.contactDesc}
+                style={{ fontSize: "var(--font-xsmall)", fontWeight: "400" }}
+              >
+                sales@persatu.one | sales@cartenzcocoa.com
+              </p>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "flex-start",
+                alignSelf: "stretch",
+                gap: "var(--pixel-10)",
+              }}
             >
-              Marketing Office: Ruko North Sorrento Square, Jalan Ir. Sukarno
-              No.3, Pagedangan, Tangerang, Banten, Indonesia, 15332
-            </p>
+              <img
+                style={{
+                  position: "relative",
+                  height: "auto",
+                  width: "var(--pixel-18)",
+                }}
+                alt="phone"
+                src="/svg/building.svg"
+              />
+              <p
+                className={styles.contactDesc}
+                style={{ fontSize: "var(--font-xsmall)", fontWeight: "400" }}
+              >
+                Ruko North Sorrento Square, Jalan Ir. Sukarno No.3, Pagedangan,
+                Tangerang, Banten, Indonesia, 15332
+              </p>
+            </div>
           </div>
         </div>
         <div className={styles.contactForm}>
