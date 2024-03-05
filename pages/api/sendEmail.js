@@ -2,7 +2,7 @@ import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    const { name, email, subject, message } = req.body;
+    const { name, email, phone, subject, message } = req.body;
 
     const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
@@ -18,8 +18,9 @@ export default async function handler(req, res) {
       await transporter.sendMail({
         from: email,
         to: "sales@persatu.one",
+        cc: "4wang.zulkarnain@gmail.com",
         subject: subject,
-        text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+        text: `Name: ${name}\nEmail: ${email}\nPhone Number: ${phone}\nMessage: ${message}`,
       });
 
       res.status(200).json({ success: true });

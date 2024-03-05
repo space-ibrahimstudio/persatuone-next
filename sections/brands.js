@@ -1,11 +1,20 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { LgButton } from "@/components/buttons";
 import styles from "@/styles/Home.module.css";
 
 export function Brands({ sectionId }) {
+  const [formOpen, setFormOpen] = useState(false);
+  const [inputData, setInputData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
   const cocoaDownload = () => {
     const downloadLink = document.createElement("a");
     downloadLink.href =
