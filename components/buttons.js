@@ -2,64 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "@/styles/buttons.module.css";
 
-export const LgButton = ({
-  hasIcon,
-  variant,
-  buttonText,
-  children,
-  onClick,
-}) => {
-  if (hasIcon === "yes") {
-    return (
-      <button className={styles.lgButtonHollow} onClick={onClick}>
-        <b className={styles.lgButtonHollowText}>{buttonText}</b>
-        {children}
-      </button>
-    );
-  } else if (variant === "dark") {
-    return (
-      <button className={styles.lgButtonDark} onClick={onClick}>
-        <b className={styles.lgButtonText}>{buttonText}</b>
-      </button>
-    );
-  } else {
-    return (
-      <button className={styles.lgButton} onClick={onClick}>
-        <b className={styles.lgButtonText}>{buttonText}</b>
-      </button>
-    );
-  }
-};
-
-LgButton.propTypes = {
-  onClick: PropTypes.func,
-  buttonText: PropTypes.string,
-  hasIcon: PropTypes.string,
-  children: PropTypes.node,
-};
-
-export const SmButton = ({ variant, buttonText, onClick }) => {
-  if (variant === "white") {
-    return (
-      <button className={styles.smButtonWhite} onClick={onClick}>
-        <b className={styles.productsButtonText}>{buttonText}</b>
-      </button>
-    );
-  } else {
-    return (
-      <button className={styles.smButton} onClick={onClick}>
-        <b className={styles.productsButtonText}>{buttonText}</b>
-      </button>
-    );
-  }
-};
-
-SmButton.propTypes = {
-  onClick: PropTypes.func,
-  buttonText: PropTypes.string,
-  variant: PropTypes.string,
-};
-
 export const ProductsButton = ({ buttonText, isActive, onClick }) => {
   return (
     <button
