@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { LgButton } from "@/components/buttons";
+import { Button } from "@ibrahimstudio/button";
 import * as ga from "@/lib/ga";
 import styles from "@/styles/Home.module.css";
 
@@ -213,7 +213,7 @@ export function Contact({ sectionId }) {
             </div>
           </div>
         </div>
-        <div className={styles.contactForm}>
+        <form className={styles.contactForm} onSubmit={handleSubmit}>
           <div className={styles.inputWrapper}>
             <div className={styles.input}>
               <input
@@ -279,12 +279,14 @@ export function Contact({ sectionId }) {
           {success && (
             <p className={styles.errorMsg}>Message sent successfully.</p>
           )}
-          <LgButton
-            variant="dark"
+          <Button
+            id="submit-messages"
+            type="submit"
+            bgColor="var(--color-darkred)"
             buttonText="Send Messages"
-            onClick={handleSubmit}
+            radius="md"
           />
-        </div>
+        </form>
       </div>
     </section>
   );

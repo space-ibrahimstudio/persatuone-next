@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
+import { Button } from "@ibrahimstudio/button";
 import { scrollToSection } from "@/utils/handler";
-import { SmButton } from "./buttons";
 import styles from "@/styles/Home.module.css";
 import menu from "@/styles/mobile-menu.module.css";
 
@@ -102,7 +102,7 @@ export function Navbar({ componentId }) {
   }, []);
 
   return (
-    <>
+    <React.Fragment>
       <nav
         id={componentId}
         className={`${styles.nav} ${isVisible ? styles.visible : ""}`}
@@ -169,9 +169,12 @@ export function Navbar({ componentId }) {
           </button>
         </div>
         <div style={{ display: "flex", flexDirection: "row", gap: "15px" }}>
-          <SmButton
-            variant={isVisible ? "white" : ""}
+          <Button
+            id="contact-nav"
+            size="sm"
+            radius="md"
             buttonText="Contact Us"
+            bgColor={isVisible ? "var(--color-darkred)" : "var(--color-red)"}
             onClick={() => scrollToSection("contact-us")}
           />
           <div className={menu.burgerIcon} onClick={openMenu}>
@@ -195,7 +198,7 @@ export function Navbar({ componentId }) {
           onClose={closeMenu}
         />
       )}
-    </>
+    </React.Fragment>
   );
 }
 
@@ -254,7 +257,7 @@ const MobileMenu = ({ componentId, activeTab, onClose }) => {
   }, [ref, setIsClosing]);
 
   return (
-    <>
+    <React.Fragment>
       <div
         ref={ref}
         className={`${menu.mobileMenu} ${isClosing ? menu.close : ""}`}
@@ -371,7 +374,7 @@ const MobileMenu = ({ componentId, activeTab, onClose }) => {
           backgroundColor: "var(--color-black-50)",
         }}
       ></div>
-    </>
+    </React.Fragment>
   );
 };
 

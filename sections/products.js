@@ -11,7 +11,7 @@ export function Products({ sectionId }) {
   const [selectedCategory, setSelectedCategory] = useState(0);
 
   return (
-    <>
+    <React.Fragment>
       <section
         id={sectionId}
         section-view-id={sectionId}
@@ -83,7 +83,7 @@ export function Products({ sectionId }) {
           />
         </div>
       </section>
-    </>
+    </React.Fragment>
   );
 }
 

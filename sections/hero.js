@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Button } from "@ibrahimstudio/button";
 import { scrollToSection } from "@/utils/handler";
-import { LgButton } from "@/components/buttons";
 import { FeatureCount } from "@/components/cards";
 import styles from "@/styles/Home.module.css";
 
@@ -20,8 +20,10 @@ export function Hero({ sectionId }) {
           Indonesia. We are happy to grow with your business, to spread the
           beauty of Indonesian Commodities to the entire world!
         </p>
-        <LgButton
+        <Button
+          id="explore-more-hero"
           buttonText="Explore More"
+          radius="md"
           onClick={() => scrollToSection("our-products")}
         />
       </div>

@@ -18,7 +18,7 @@ import styles from "@/styles/Home.module.css";
 
 export default function Home() {
   return (
-    <>
+    <React.Fragment>
       <Head>
         <title>
           Finest Cocoa Powder Supplier from Indonesia - Persatu.one - Komoditas
@@ -47,6 +47,6 @@ export default function Home() {
         <Contact sectionId="contact-us" />
         <Footer componentId="home-footer" />
       </div>
-    </>
+    </React.Fragment>
   );
 }

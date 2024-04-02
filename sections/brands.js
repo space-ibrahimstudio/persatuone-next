@@ -1,20 +1,9 @@
-"use client";
-
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { Button } from "@ibrahimstudio/button";
 import PropTypes from "prop-types";
-import { LgButton } from "@/components/buttons";
 import styles from "@/styles/Home.module.css";
 
 export function Brands({ sectionId }) {
-  const [formOpen, setFormOpen] = useState(false);
-  const [inputData, setInputData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
   const cocoaDownload = () => {
     const downloadLink = document.createElement("a");
     downloadLink.href =
@@ -23,11 +12,6 @@ export function Brands({ sectionId }) {
     document.body.appendChild(downloadLink);
     downloadLink.click();
     document.body.removeChild(downloadLink);
-  };
-
-  const cocoaLink = () => {
-    const link = "https://www.cartenzcocoa.com";
-    window.open(link, "_blank");
   };
 
   const coffeeDownload = () => {
@@ -40,29 +24,8 @@ export function Brands({ sectionId }) {
     document.body.removeChild(downloadLink);
   };
 
-  const cofeeLink = () => {
-    const link = "https://www.celcogroup.com/en/englishhomepage";
-    window.open(link, "_blank");
-  };
-
-  useEffect(() => {
-    const svg = document.getElementById("visit-cocoa");
-    svg.setAttribute(
-      "width",
-      getComputedStyle(document.documentElement).getPropertyValue("--pixel-18")
-    );
-  }, []);
-
-  useEffect(() => {
-    const svg = document.getElementById("visit-coffee");
-    svg.setAttribute(
-      "width",
-      getComputedStyle(document.documentElement).getPropertyValue("--pixel-18")
-    );
-  }, []);
-
   return (
-    <>
+    <React.Fragment>
       <section
         id={sectionId}
         section-view-id={sectionId}
@@ -88,25 +51,31 @@ export function Brands({ sectionId }) {
             </p>
           </div>
           <div className={styles.brandsHeadingFooter}>
-            <LgButton buttonText="Download Catalog" onClick={cocoaDownload} />
-            <LgButton
+            <Button
+              id="download-cartenzcocoa-catalog"
+              buttonText="Download Catalog"
+              radius="md"
+              onClick={cocoaDownload}
+            />
+            <Button
+              id="visit-cartenzcocoa"
+              variant="line"
+              type="link"
+              color="var(--color-red)"
               buttonText="Visit cartenzcocoa.com"
-              hasIcon="yes"
-              onClick={cocoaLink}
-            >
-              <svg
-                id="visit-cocoa"
-                height="100%"
-                viewBox="0 0 18 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M10.5 0.5L9.428 1.545L15.112 7.25H0V8.75H15.113L9.428 14.43L10.5 15.5L18 8L10.5 0.5Z"
-                  fill="currentColor"
+              radius="md"
+              href="https://www.cartenzcocoa.com"
+              endContent={
+                <img
+                  style={{
+                    width: "var(--pixel-18)",
+                    height: "auto",
+                    position: "relative",
+                  }}
+                  src="/svg/arrow-icon.svg"
                 />
-              </svg>
-            </LgButton>
+              }
+            />
           </div>
         </div>
       </section>
@@ -128,25 +97,31 @@ export function Brands({ sectionId }) {
             </p>
           </div>
           <div className={styles.brandsHeadingFooter}>
-            <LgButton buttonText="Download Catalog" onClick={coffeeDownload} />
-            <LgButton
+            <Button
+              id="download-celcogroup-catalog"
+              buttonText="Download Catalog"
+              radius="md"
+              onClick={coffeeDownload}
+            />
+            <Button
+              id="visit-celcogroup"
+              variant="line"
+              type="link"
+              color="var(--color-red)"
               buttonText="Visit celcogroup.com"
-              hasIcon="yes"
-              onClick={cofeeLink}
-            >
-              <svg
-                id="visit-coffee"
-                height="100%"
-                viewBox="0 0 18 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M10.5 0.5L9.428 1.545L15.112 7.25H0V8.75H15.113L9.428 14.43L10.5 15.5L18 8L10.5 0.5Z"
-                  fill="currentColor"
+              radius="md"
+              href="https://www.celcogroup.com/en/englishhomepage"
+              endContent={
+                <img
+                  style={{
+                    width: "var(--pixel-18)",
+                    height: "auto",
+                    position: "relative",
+                  }}
+                  src="/svg/arrow-icon.svg"
                 />
-              </svg>
-            </LgButton>
+              }
+            />
           </div>
         </div>
         <img
@@ -156,7 +131,7 @@ export function Brands({ sectionId }) {
           alt="Celebes Coffee (CELCO)"
         />
       </section>
-    </>
+    </React.Fragment>
   );
 }
 
