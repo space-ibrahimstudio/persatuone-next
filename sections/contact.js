@@ -3,9 +3,11 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { LgButton } from "@/components/buttons";
+import * as ga from "@/lib/ga";
 import styles from "@/styles/Home.module.css";
 
 export function Contact({ sectionId }) {
+  const [success, setSuccess] = useState(false);
   const [inputData, setInputData] = useState({
     name: "",
     phone: "",
@@ -21,8 +23,6 @@ export function Contact({ sectionId }) {
     subject: "",
     message: "",
   });
-
-  const [success, setSuccess] = useState(false);
 
   const cleanInput = () => {
     setInputData({
@@ -76,10 +76,22 @@ export function Contact({ sectionId }) {
     });
   };
 
+  const getAnalytics = () => {
+    ga.event({
+      action: "submit-form",
+      params: {
+        name: inputData.name,
+        phone: inputData.phone,
+        email: inputData.email,
+      },
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (validateStep()) {
+      getAnalytics();
       try {
         const response = await fetch("/api/sendEmail", {
           method: "POST",

@@ -1,15 +1,21 @@
 import React, { useEffect } from "react";
-import { initGA, logPageView } from "@/components/utils/analytics";
+import { useRouter } from "next/router";
+import * as ga from "@/lib/ga";
 import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }) {
+  const router = useRouter();
+
   useEffect(() => {
-    if (!window.GA_INITIALIZED) {
-      initGA();
-      window.GA_INITIALIZED = true;
-    }
-    logPageView();
-  }, []);
+    const handleRouteChange = (url) => {
+      ga.pageview(url);
+    };
+
+    router.events.on("routeChangeComplete", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
 
   return <Component {...pageProps} />;
 }
