@@ -1,5 +1,6 @@
+"use client";
+
 import React, { useState } from "react";
-import { ClientOnly } from "@/lib/client/client";
 import PropTypes from "prop-types";
 import { albums } from "@/utils/data";
 import { GalleryButton } from "@/components/buttons";
@@ -13,40 +14,38 @@ export function Gallery({ sectionId }) {
   };
 
   return (
-    <ClientOnly>
-      <section
-        id={sectionId}
-        section-view-id={sectionId}
-        className={styles.certifications}
-      >
-        <div className={styles.facilityHeading}>
-          <h1 className={styles.factoryTitle}>Our Gallery</h1>
+    <section
+      id={sectionId}
+      section-view-id={sectionId}
+      className={styles.certifications}
+    >
+      <div className={styles.facilityHeading}>
+        <h1 className={styles.factoryTitle}>Our Gallery</h1>
+      </div>
+      <div className={styles.galleryBody}>
+        <div className={styles.galleryTab}>
+          {albums.map((album) => (
+            <GalleryButton
+              key={album.id}
+              buttonText={album.name}
+              onClick={() => handleAlbumClick(album)}
+              isActive={selectedAlbum.id === album.id}
+            />
+          ))}
         </div>
-        <div className={styles.galleryBody}>
-          <div className={styles.galleryTab}>
-            {albums.map((album) => (
-              <GalleryButton
-                key={album.id}
-                buttonText={album.name}
-                onClick={() => handleAlbumClick(album)}
-                isActive={selectedAlbum.id === album.id}
+        <div className={styles.galleryList}>
+          {selectedAlbum.images.map((image, index) => (
+            <div className={styles.galleryImageWrap} key={index}>
+              <img
+                className={styles.galleryImage}
+                src={`/img/albums/${image}.webp`}
+                alt={image}
               />
-            ))}
-          </div>
-          <div className={styles.galleryList}>
-            {selectedAlbum.images.map((image, index) => (
-              <div className={styles.galleryImageWrap} key={index}>
-                <img
-                  className={styles.galleryImage}
-                  src={`/img/albums/${image}.webp`}
-                  alt={image}
-                />
-              </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
-      </section>
-    </ClientOnly>
+      </div>
+    </section>
   );
 }
 

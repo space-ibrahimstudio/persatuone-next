@@ -1,5 +1,6 @@
+"use client";
+
 import React, { useState } from "react";
-import { ClientOnly } from "@/lib/client/client";
 import PropTypes from "prop-types";
 import { ProductsButton } from "@/components/buttons";
 import { categories, productsData } from "@/utils/data";
@@ -10,7 +11,7 @@ export function Products({ sectionId }) {
   const [selectedCategory, setSelectedCategory] = useState(0);
 
   return (
-    <ClientOnly>
+    <React.Fragment>
       <section
         id={sectionId}
         section-view-id={sectionId}
@@ -82,7 +83,7 @@ export function Products({ sectionId }) {
           />
         </div>
       </section>
-    </ClientOnly>
+    </React.Fragment>
   );
 }
 
