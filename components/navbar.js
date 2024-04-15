@@ -1,6 +1,5 @@
-"use client";
-
 import React, { useState, useEffect, useRef } from "react";
+import { ClientOnly } from "@/lib/client/client";
 import PropTypes from "prop-types";
 import { Button } from "@ibrahimstudio/button";
 import { scrollToSection } from "@/utils/handler";
@@ -102,7 +101,7 @@ export function Navbar({ componentId }) {
   }, []);
 
   return (
-    <React.Fragment>
+    <ClientOnly>
       <nav
         id={componentId}
         className={`${styles.nav} ${isVisible ? styles.visible : ""}`}
@@ -198,7 +197,7 @@ export function Navbar({ componentId }) {
           onClose={closeMenu}
         />
       )}
-    </React.Fragment>
+    </ClientOnly>
   );
 }
 
@@ -257,7 +256,7 @@ const MobileMenu = ({ componentId, activeTab, onClose }) => {
   }, [ref, setIsClosing]);
 
   return (
-    <React.Fragment>
+    <ClientOnly>
       <div
         ref={ref}
         className={`${menu.mobileMenu} ${isClosing ? menu.close : ""}`}
@@ -374,7 +373,7 @@ const MobileMenu = ({ componentId, activeTab, onClose }) => {
           backgroundColor: "var(--color-black-50)",
         }}
       ></div>
-    </React.Fragment>
+    </ClientOnly>
   );
 };
 
