@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { Input } from "@ibrahimstudio/input";
 import { Button } from "@ibrahimstudio/button";
 import * as ga from "@/lib/ga";
 import styles from "@/styles/Home.module.css";
@@ -215,58 +216,60 @@ export function Contact({ sectionId }) {
         </div>
         <form className={styles.contactForm} onSubmit={handleSubmit}>
           <div className={styles.inputWrapper}>
-            <div className={styles.input}>
-              <input
-                className={styles.iputField}
-                placeholder="Your Name*"
-                type="text"
-                name="name"
-                value={inputData.name}
-                onChange={handleInputChange}
-              />
-            </div>
-            <div className={styles.input}>
-              <input
-                className={styles.iputField}
-                placeholder="Your Email*"
-                type="email"
-                name="email"
-                value={inputData.email}
-                onChange={handleInputChange}
-              />
-            </div>
-          </div>
-          <div className={styles.inputWrapper}>
-            <div className={styles.input}>
-              <input
-                className={styles.iputField}
-                placeholder="Phone Number"
-                type="tel"
-                name="phone"
-                value={inputData.phone}
-                onChange={handleInputChange}
-              />
-            </div>
-            <div className={styles.input}>
-              <input
-                className={styles.iputField}
-                placeholder="Subject"
-                type="text"
-                name="subject"
-                value={inputData.subject}
-                onChange={handleInputChange}
-              />
-            </div>
-          </div>
-          <div className={styles.input4}>
-            <textarea
-              className={styles.iputField4}
-              placeholder="Write message"
-              name="message"
-              value={inputData.message}
+            <Input
+              id="client-name"
+              name="name"
+              type="text"
+              placeholder="Your Name"
+              isLabeled={false}
+              value={inputData.name}
               onChange={handleInputChange}
+              isRequired
+            />
+            <Input
+              id="client-email"
+              name="email"
+              type="email"
+              placeholder="Your Email"
+              isLabeled={false}
+              value={inputData.email}
+              onChange={handleInputChange}
+              isRequired
             />
           </div>
+          <div className={styles.inputWrapper}>
+            <Input
+              id="client-phone"
+              name="phone"
+              type="tel"
+              placeholder="Phone Number"
+              isLabeled={false}
+              value={inputData.phone}
+              onChange={handleInputChange}
+              isRequired
+            />
+            <Input
+              id="client-subject"
+              name="subject"
+              type="text"
+              placeholder="Subject"
+              isLabeled={false}
+              value={inputData.subject}
+              onChange={handleInputChange}
+              isRequired
+            />
+          </div>
+          <Input
+            id="client-message"
+            variant="textarea"
+            name="message"
+            placeholder="Write message here ..."
+            isLabeled={false}
+            value={inputData.message}
+            onChange={handleInputChange}
+            isRequired
+            rows={3}
+          />
           {errors && (
             <p className={styles.errorMsg}>
               {errors.name ||

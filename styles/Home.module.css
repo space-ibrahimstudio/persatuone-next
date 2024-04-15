@@ -689,16 +689,12 @@
   font-family: inherit;
 }
 
-.contactDesc,
-.iputField {
-  font-family: var(--font-noto);
-}
-
 .contactDesc {
   margin: 0;
   align-self: stretch;
   position: relative;
   font-size: var(--font-small);
+  font-family: var(--font-noto);
   font-weight: 600;
 }
 
@@ -711,45 +707,9 @@
   font-weight: 600;
 }
 
-.iputField {
-  border: 0;
-  outline: 0;
-  font-weight: 700;
-  font-size: var(--font-xsmall);
-  background-color: transparent;
-  flex: 1;
-  align-items: center;
-  justify-content: flex-start;
-  padding: var(--padd-10);
-  color: var(--color-brown);
-  transition: all 0.3s ease-in-out;
-}
-
-.iputField::placeholder {
-  font-weight: 600;
-  color: var(--color-brown-50);
-}
-
-.input,
-.inputWrapper,
-.iputField {
+.inputWrapper {
   display: flex;
   flex-direction: row;
-}
-
-.input {
-  flex: 1;
-  border-radius: var(--br-12);
-  background-color: var(--color-white);
-  border: 1px solid var(--color-white);
-  box-sizing: border-box;
-  height: var(--pixel-50);
-  align-items: center;
-  justify-content: flex-start;
-  padding: var(--padd-5);
-}
-
-.inputWrapper {
   align-self: stretch;
   align-items: flex-start;
   flex-wrap: wrap;
@@ -757,51 +717,11 @@
   gap: var(--pixel-10);
 }
 
-.contactForm,
-.input4,
-.iputField4 {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.iputField4 {
-  border: 0;
-  background-color: transparent;
-  font-weight: 700;
-  font-family: var(--font-noto);
-  font-size: var(--font-xsmall);
-  outline: 0;
-  flex: 1;
-  flex-direction: row;
-  align-items: center;
-  height: var(--pixel-125);
-  padding: var(--padd-10);
-  color: var(--color-brown);
-  transition: all 0.3s ease-in-out;
-}
-
-.iputField4::placeholder {
-  font-weight: 600;
-  color: var(--color-brown-50);
-}
-
-.contactForm,
-.input4 {
-  align-items: flex-start;
-}
-
-.input4 {
-  align-self: stretch;
-  border-radius: var(--br-12);
-  background-color: var(--color-white);
-  border: 1px solid var(--color-white);
-  box-sizing: border-box;
-  flex-direction: row;
-  padding: var(--padd-5);
-}
-
 .contactForm {
   flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
   flex-direction: column;
   gap: var(--pixel-10) 0;
   min-width: var(--pixel-300);

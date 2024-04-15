@@ -12,8 +12,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@ibrahimstudio/button": "^1.1.0",
-    "@ibrahimstudio/function": "^1.0.1",
+    "@ibrahimstudio/button": "^1.1.5",
+    "@ibrahimstudio/function": "^1.0.4",
+    "@ibrahimstudio/input": "^1.2.0",
     "axios": "^1.6.7",
     "next": "14.0.4",
     "nodemailer": "^6.9.11",
