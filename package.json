@@ -14,7 +14,7 @@
   "dependencies": {
     "@ibrahimstudio/button": "^1.1.5",
     "@ibrahimstudio/function": "^1.0.4",
-    "@ibrahimstudio/input": "^1.2.0",
+    "@ibrahimstudio/input": "^1.2.2",
     "axios": "^1.6.7",
     "next": "14.0.4",
     "nodemailer": "^6.9.11",
