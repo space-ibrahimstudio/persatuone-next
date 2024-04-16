@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import styles from "@/styles/Home.module.css";
@@ -153,9 +155,10 @@ export const NewsCard = ({
   cardDate,
   cardComments,
   imageUrl,
+  onClick,
 }) => {
   return (
-    <section className={news.newsCard}>
+    <section className={news.newsCard} onClick={onClick}>
       <div className={news.newsCardImage}>
         <div className={news.newsCardDate}>
           <h6 className={news.newsCardDateText}>{cardDate}</h6>
@@ -195,6 +198,7 @@ NewsCard.propTypes = {
   cardDate: PropTypes.string,
   cardComments: PropTypes.string,
   imageUrl: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 export const FeatureCount = ({ finalCount, units, description }) => {

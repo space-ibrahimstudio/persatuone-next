@@ -151,7 +151,8 @@
 
 .feature,
 .featureContent,
-.hero {
+.hero,
+.blogBanner {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -165,7 +166,8 @@
 }
 
 .feature,
-.hero {
+.hero,
+.blogBanner {
   align-self: stretch;
 }
 
@@ -193,6 +195,13 @@
   .featureContentDesc {
     font-size: var(--font-xsmall);
   }
+}
+
+.blogBanner {
+  position: relative;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: var(--pixel-450);
 }
 
 .hero {

@@ -16,7 +16,7 @@ import { Contact } from "@/sections/contact";
 import { Footer } from "@/components/footer";
 import styles from "@/styles/Home.module.css";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <React.Fragment>
       <Head>

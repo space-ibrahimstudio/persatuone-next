@@ -1,3 +1,7 @@
+import axios from "axios";
+
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+
 export const categories = [
   "Low Fat Series",
   "Standard Series",
@@ -85,3 +89,45 @@ export const albums = [
     images: Array.from({ length: 10 }, (_, i) => `Album 5 Image ${i + 1}`),
   },
 ];
+
+export async function fetchBlogList() {
+  try {
+    const response = await axios.get(
+      `${baseUrl}/persatuone_api/main/viewblog`,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
+
+    console.log("Blog list data:", response.data);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching blog list data:", error);
+    throw error;
+  }
+}
+
+export async function fetchBlogDetail(blogid) {
+  try {
+    const formData = new FormData();
+    formData.append("idblog", blogid);
+
+    const response = await axios.post(
+      `${baseUrl}/persatuone_api/main/viewblogdetail`,
+      formData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
+
+    console.log("Blog detail data:", response.data);
+    return response.data.data;
+  } catch (error) {
+    console.error("Error fetching blog detail data:", error);
+    throw error;
+  }
+}

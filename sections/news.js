@@ -1,9 +1,45 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import PropTypes from "prop-types";
+import { fetchBlogList } from "@/utils/data";
+import { Button } from "@ibrahimstudio/button";
 import { NewsCard } from "@/components/cards";
 import styles from "@/styles/Home.module.css";
 
 export function News({ sectionId }) {
+  const router = useRouter();
+  const [newsList, setNewsList] = useState([]);
+
+  const navigateDetail = (id) => {
+    router.push(`/news/${id}`);
+  };
+
+  const stripHtmlTags = (html) => {
+    const temp = document.createElement("div");
+    temp.innerHTML = html;
+
+    return temp.innerText || temp.textContent || "";
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await fetchBlogList();
+        if (data && data.data && data.data.length > 0) {
+          setNewsList(data.data);
+        } else {
+          setNewsList([]);
+        }
+      } catch (error) {
+        console.error("Error fetching blog list data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <section
       id={sectionId}
@@ -14,28 +50,24 @@ export function News({ sectionId }) {
         <h1 className={styles.factoryTitle}>News & Articles</h1>
       </div>
       <div className={styles.newsBody}>
-        <NewsCard
-          imageUrl="/img/img-16.webp"
-          cardTitle="Tips to Import Cocoa Powder"
-          cardDesc="Cocoa powder is a fundamental ingredient in the confectionery, bakery, and beverage industries, making it a commodity with steady demand. However, the success of your cocoa powder import business depends on several key factors."
-          cardDate="Mar 02, 2024"
-          cardComments="0"
-        />
-        <NewsCard
-          imageUrl="/img/img-13.webp"
-          cardTitle="Difference Between Alkalized and Natural Cocoa Powder"
-          cardDesc="Two of the most prominent variants are alkalized cocoa powder and natural cocoa powder. Understanding the distinctions between these two types of cocoa is vital for both industry professionals and passionate home bakers. In this article, we'll delve into the world of cocoa to explore the differences between alkalized cocoa powder and natural cocoa powder, shedding light on their properties, uses, and how Cartenz Cocoa ensures the highest quality for both varieties."
-          cardDate="Mar 02, 2024"
-          cardComments="0"
-        />
-        <NewsCard
-          imageUrl="/img/img-14.webp"
-          cardTitle="How Cocoa Powder is Made?"
-          cardDesc="Cocoa powder, the magical ingredient that infuses our baked goods, confections, and beverages with irresistible chocolate flavor, has a fascinating journey from cocoa beans to your kitchen. At Cartenz Cocoa, we take immense pride in the craftsmanship and precision that goes into creating the cocoa powder we offer."
-          cardDate="Mar 02, 2024"
-          cardComments="0"
-        />
+        {newsList.map((news, index) => (
+          <NewsCard
+            key={index}
+            imageUrl={news.thumbnail}
+            cardTitle={news.title}
+            cardDesc={stripHtmlTags(news.content)}
+            cardDate={news.blogcreate}
+            cardComments="0"
+            onClick={() => navigateDetail(news.idblog)}
+          />
+        ))}
       </div>
+      <Button
+        id="view-all-news"
+        buttonText="View All News"
+        radius="md"
+        onClick={() => router.push("/news")}
+      />
     </section>
   );
 }

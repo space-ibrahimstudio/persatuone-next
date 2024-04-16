@@ -16,11 +16,13 @@
     "@ibrahimstudio/function": "^1.0.4",
     "@ibrahimstudio/input": "^1.2.2",
     "axios": "^1.6.7",
+    "dompurify": "^3.1.0",
     "next": "14.0.4",
     "nodemailer": "^6.9.11",
     "prop-types": "^15.8.1",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-router-dom": "^6.22.3"
   },
   "devDependencies": {
     "eslint": "^8",
