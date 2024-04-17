@@ -15,8 +15,8 @@ export default function NewsPage() {
   const router = useRouter();
   const [newsList, setNewsList] = useState([]);
 
-  const navigateDetail = (id) => {
-    router.push(`/news/${id}`);
+  const navigateDetail = (blog) => {
+    router.push(`/news/${blog}`);
   };
 
   useEffect(() => {
@@ -102,7 +102,7 @@ export default function NewsPage() {
                 cardDesc={stripHtmlTags(news.content)}
                 cardDate={news.blogcreate}
                 cardComments="0"
-                onClick={() => navigateDetail(news.idblog)}
+                onClick={() => navigateDetail(news.slug)}
               />
             ))}
           </div>

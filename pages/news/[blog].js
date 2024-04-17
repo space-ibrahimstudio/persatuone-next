@@ -2,43 +2,19 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { NewsCard } from "@/components/cards";
 import { stripHtmlTags } from "@/utils/handler";
-import {
-  fetchBlogDetail,
-  fetchBlogList,
-  fetchBlogMetadata,
-} from "@/utils/data";
+import { fetchBlogDetail, fetchBlogList } from "@/utils/data";
 import { Navbar } from "@/components/navbar";
 import { WhatsAppButton } from "@/components/buttons";
 import { Footer } from "@/components/footer";
 import styles from "@/styles/Home.module.css";
 
-export default function NewsDetail({ title, description }) {
+export default function NewsDetail({ blogdetail }) {
   const router = useRouter();
-  const { blogid } = router.query;
-  const [blog, setBlog] = useState([]);
   const [newsList, setNewsList] = useState([]);
 
-  const navigateDetail = (blogid) => {
-    router.push(`/news/${blogid}`);
+  const navigateDetail = (blog) => {
+    router.push(`/news/${blog}`);
   };
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await fetchBlogDetail(blogid);
-        if (data && data.data && data.data.length > 0) {
-          const blog = data.data.find((blog) => blog.idblog === blogid);
-          setBlog(blog);
-        } else {
-          setBlog([]);
-        }
-      } catch (error) {
-        console.error("Error fetching blog list data:", error);
-      }
-    };
-
-    fetchData();
-  }, [blogid]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -65,14 +41,16 @@ export default function NewsDetail({ title, description }) {
         <img
           className={styles.blogBanner}
           loading="lazy"
-          src={blog.thumbnail}
+          src={blogdetail.thumbnail}
         />
         <div className={styles.about}>
           <div className={styles.aboutHeading}>
-            <h1 className={styles.aboutTitle}>{title}</h1>
-            <h2 className={styles.aboutSubtitle}>{blog.blogcreate}</h2>
+            <h1 className={styles.aboutTitle}>{blogdetail.title}</h1>
+            <h2 className={styles.aboutSubtitle}>
+              Posted at {blogdetail.blogcreate}
+            </h2>
             <div
-              dangerouslySetInnerHTML={{ __html: description }}
+              dangerouslySetInnerHTML={{ __html: blogdetail.content }}
               className={styles.aboutDesc}
             />
           </div>
@@ -90,7 +68,7 @@ export default function NewsDetail({ title, description }) {
                 cardDesc={stripHtmlTags(news.content)}
                 cardDate={news.blogcreate}
                 cardComments="0"
-                onClick={() => navigateDetail(news.idblog)}
+                onClick={() => navigateDetail(news.slug)}
               />
             ))}
           </div>
@@ -102,17 +80,38 @@ export default function NewsDetail({ title, description }) {
 }
 
 NewsDetail.getInitialProps = async (ctx) => {
+  const { blog } = ctx.query;
+
   try {
-    const { blogid } = ctx.query;
-    const data = await fetchBlogMetadata(blogid);
-    const { title, content } = data;
+    const blogList = await fetchBlogList();
+    if (blogList && blogList.data && blogList.data.length > 0) {
+      const blogid = blogList.data.find((blogList) => blogList.slug === blog);
+      const data = await fetchBlogDetail(blogid.idblog);
 
-    const description = content;
-    const pagePath = `/${blogid}`;
+      const blogdetail = data;
+      const title = blogdetail.title;
+      const description = blogdetail.content;
+      const pagePath = `/${blogdetail.slug}`;
+      const thumbnail = blogdetail.thumbnail;
 
-    return { title, description, pagePath };
+      return { blogdetail, title, description, pagePath, thumbnail };
+    } else {
+      return {
+        blogdetail: [],
+        title: "",
+        description: "",
+        pagePath: "",
+        thumbnail: "",
+      };
+    }
   } catch (error) {
     console.error("Error fetching blog detail data:", error);
-    return { title: "", description: "", pagePath: "" };
+    return {
+      blogdetail: [],
+      title: "",
+      description: "",
+      pagePath: "",
+      thumbnail: "",
+    };
   }
 };

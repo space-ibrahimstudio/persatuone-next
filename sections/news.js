@@ -13,8 +13,8 @@ export function News({ sectionId }) {
   const router = useRouter();
   const [newsList, setNewsList] = useState([]);
 
-  const navigateDetail = (blogid) => {
-    router.push(`/news/${blogid}`);
+  const navigateDetail = (blog) => {
+    router.push(`/news/${blog}`);
   };
 
   useEffect(() => {
@@ -52,7 +52,7 @@ export function News({ sectionId }) {
             cardDesc={stripHtmlTags(news.content)}
             cardDate={news.blogcreate}
             cardComments="0"
-            onClick={() => navigateDetail(news.idblog)}
+            onClick={() => navigateDetail(news.slug)}
           />
         ))}
       </div>

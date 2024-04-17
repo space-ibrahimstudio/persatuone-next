@@ -9,11 +9,15 @@ const baseUrl = "https://persatu.one";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
-  const { title, description, pagePath } = pageProps;
-  const pageUrl = `${baseUrl}${pagePath}`;
-  const strippedContent = description
-    ? stripMetaContent(description).substring(0, 160)
+
+  const pageUrl = `${baseUrl}${pageProps?.pagePath}`;
+  const strippedContent = pageProps?.description
+    ? stripMetaContent(pageProps.description).substring(0, 160)
     : "";
+
+  const thumbnail = pageProps?.thumbnail
+    ? pageProps.thumbnail
+    : `${baseUrl}/img/img-12.webp`;
 
   useEffect(() => {
     const handleRouteChange = (url) => {
@@ -29,15 +33,15 @@ export default function App({ Component, pageProps }) {
   return (
     <Suspense>
       <Head>
-        <title>{title}</title>
+        <title>{pageProps?.title}</title>
         <meta name="description" content={strippedContent} />
         <meta property="og:url" content={pageUrl} />
         <link rel="canonical" href={pageUrl} />
         <link rel="icon" href="/favicon.ico" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content={title} />
+        <meta property="og:title" content={pageProps?.title} />
         <meta property="og:description" content={strippedContent} />
-        <meta property="og:image" content={`${baseUrl}/img/img-12.webp`} />
+        <meta property="og:image" content={thumbnail} />
       </Head>
       <Component {...pageProps} />
     </Suspense>
