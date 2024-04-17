@@ -1,35 +1,44 @@
 import React, { useState, useEffect } from "react";
-import Head from "next/head";
 import { useRouter } from "next/router";
 import { NewsCard } from "@/components/cards";
 import { stripHtmlTags } from "@/utils/handler";
-import { fetchBlogDetail, fetchBlogList } from "@/utils/data";
+import {
+  fetchBlogDetail,
+  fetchBlogList,
+  fetchBlogMetadata,
+} from "@/utils/data";
 import { Navbar } from "@/components/navbar";
+import { WhatsAppButton } from "@/components/buttons";
 import { Footer } from "@/components/footer";
 import styles from "@/styles/Home.module.css";
 
-export default function NewsDetail() {
+export default function NewsDetail({ title, description }) {
   const router = useRouter();
-  const { id } = router.query;
-  const [blog, setBlog] = useState("");
+  const { blogid } = router.query;
+  const [blog, setBlog] = useState([]);
   const [newsList, setNewsList] = useState([]);
 
-  const navigateDetail = (id) => {
-    router.push(`/news/${id}`);
+  const navigateDetail = (blogid) => {
+    router.push(`/news/${blogid}`);
   };
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await fetchBlogDetail(id);
-        setBlog(data[0]);
+        const data = await fetchBlogDetail(blogid);
+        if (data && data.data && data.data.length > 0) {
+          const blog = data.data.find((blog) => blog.idblog === blogid);
+          setBlog(blog);
+        } else {
+          setBlog([]);
+        }
       } catch (error) {
         console.error("Error fetching blog list data:", error);
       }
     };
 
     fetchData();
-  }, [id]);
+  }, [blogid]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -50,12 +59,7 @@ export default function NewsDetail() {
 
   return (
     <React.Fragment>
-      <Head>
-        <title>{blog.title}</title>
-        <meta name="description" content={stripHtmlTags(blog.content)} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <WhatsAppButton />
       <div id="persatu.one-news" className={styles.home}>
         <Navbar componentId="news-detail-nav" />
         <img
@@ -65,10 +69,10 @@ export default function NewsDetail() {
         />
         <div className={styles.about}>
           <div className={styles.aboutHeading}>
-            <h1 className={styles.aboutTitle}>{blog.title}</h1>
+            <h1 className={styles.aboutTitle}>{title}</h1>
             <h2 className={styles.aboutSubtitle}>{blog.blogcreate}</h2>
             <div
-              dangerouslySetInnerHTML={{ __html: blog.content }}
+              dangerouslySetInnerHTML={{ __html: description }}
               className={styles.aboutDesc}
             />
           </div>
@@ -96,3 +100,19 @@ export default function NewsDetail() {
     </React.Fragment>
   );
 }
+
+NewsDetail.getInitialProps = async (ctx) => {
+  try {
+    const { blogid } = ctx.query;
+    const data = await fetchBlogMetadata(blogid);
+    const { title, content } = data;
+
+    const description = content;
+    const pagePath = `/${blogid}`;
+
+    return { title, description, pagePath };
+  } catch (error) {
+    console.error("Error fetching blog detail data:", error);
+    return { title: "", description: "", pagePath: "" };
+  }
+};

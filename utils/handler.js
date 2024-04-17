@@ -28,3 +28,7 @@ export const stripHtmlTags = (html) => {
 
   return temp.innerText || temp.textContent || "";
 };
+
+export function stripMetaContent(html) {
+  return html.replace(/<[^>]*>?/gm, "");
+}

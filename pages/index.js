@@ -1,5 +1,4 @@
 import React from "react";
-import Head from "next/head";
 import { WhatsAppButton } from "@/components/buttons";
 import { Navbar } from "@/components/navbar";
 import { Hero } from "@/sections/hero";
@@ -19,18 +18,6 @@ import styles from "@/styles/Home.module.css";
 export default function HomePage() {
   return (
     <React.Fragment>
-      <Head>
-        <title>
-          Finest Cocoa Powder Supplier from Indonesia - Persatu.one - Komoditas
-          Indonesia
-        </title>
-        <meta
-          name="description"
-          content="We are one of the leading COCOA POWDER manufacturer, SUPPLIER, and exporter from INDONESIA. We provide you the best quality of cocoa for your business!"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <WhatsAppButton />
       <div id="persatu.one-home" className={styles.home}>
         <Navbar componentId="home-nav" />
@@ -50,3 +37,13 @@ export default function HomePage() {
     </React.Fragment>
   );
 }
+
+HomePage.getInitialProps = async () => {
+  return {
+    title:
+      "Finest Cocoa Powder Supplier from Indonesia - Persatu.one - Komoditas Indonesia",
+    description:
+      "We are one of the leading COCOA POWDER manufacturer, SUPPLIER, and exporter from INDONESIA. We provide you the best quality of cocoa for your business!",
+    pagePath: "/",
+  };
+};

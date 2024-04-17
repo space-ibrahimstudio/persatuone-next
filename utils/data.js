@@ -125,7 +125,34 @@ export async function fetchBlogDetail(blogid) {
     );
 
     console.log("Blog detail data:", response.data);
-    return response.data.data;
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching blog detail data:", error);
+    throw error;
+  }
+}
+
+export async function fetchBlogMetadata(blogid) {
+  try {
+    const formData = new FormData();
+    formData.append("idblog", blogid);
+
+    const response = await axios.post(
+      `${baseUrl}/persatuone_api/main/viewblogdetail`,
+      formData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
+
+    const { data } = response.data;
+    if (data && data.length > 0) {
+      return data[0];
+    } else {
+      throw new Error("Blog post not found");
+    }
   } catch (error) {
     console.error("Error fetching blog detail data:", error);
     throw error;

@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import PropTypes from "prop-types";
+import { stripHtmlTags } from "@/utils/handler";
 import { fetchBlogList } from "@/utils/data";
 import { Button } from "@ibrahimstudio/button";
 import { NewsCard } from "@/components/cards";
@@ -12,15 +13,8 @@ export function News({ sectionId }) {
   const router = useRouter();
   const [newsList, setNewsList] = useState([]);
 
-  const navigateDetail = (id) => {
-    router.push(`/news/${id}`);
-  };
-
-  const stripHtmlTags = (html) => {
-    const temp = document.createElement("div");
-    temp.innerHTML = html;
-
-    return temp.innerText || temp.textContent || "";
+  const navigateDetail = (blogid) => {
+    router.push(`/news/${blogid}`);
   };
 
   useEffect(() => {
