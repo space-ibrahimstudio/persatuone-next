@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "https://zulkarna.in";
+const baseUrl = process.env.NEXT_PUBLIC_API_ENDPOINT;
 
 export const categories = [
   "Low Fat Series",

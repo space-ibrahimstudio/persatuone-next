@@ -160,19 +160,21 @@ export const FeatureCount = ({ finalCount, units, description }) => {
 
   useEffect(() => {
     const duration = 1000;
-    const increment = Math.ceil(finalCount / (duration / 100));
+    const increment = finalCount / (duration / 100);
+    let currentCount = 0;
 
     const interval = setInterval(() => {
-      if (count < finalCount) {
-        setCount((prevCount) => prevCount + increment);
-      } else {
+      currentCount += increment;
+      if (currentCount >= finalCount) {
         setCount(finalCount);
         clearInterval(interval);
+      } else {
+        setCount(Math.ceil(currentCount));
       }
     }, 100);
 
     return () => clearInterval(interval);
-  }, [count, finalCount]);
+  }, [finalCount]);
 
   return (
     <div className={styles.featureContent}>

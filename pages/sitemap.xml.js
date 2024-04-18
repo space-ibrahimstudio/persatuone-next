@@ -13,7 +13,7 @@ export const getServerSideProps = async ({ res }) => {
     return { props: {} };
   }
 
-  const baseUrl = "https://persatu.one";
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
   let sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>`;
   sitemapXml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;

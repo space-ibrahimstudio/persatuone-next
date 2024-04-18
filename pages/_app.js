@@ -5,7 +5,7 @@ import * as ga from "@/lib/ga";
 import "@/styles/globals.css";
 import Head from "next/head";
 
-const baseUrl = "https://persatu.one";
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
