@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@ibrahimstudio/button": "^1.1.5",
-    "@ibrahimstudio/function": "^1.0.4",
+    "@ibrahimstudio/function": "^1.0.6",
     "@ibrahimstudio/input": "^1.2.2",
     "axios": "^1.6.7",
     "dompurify": "^3.1.0",

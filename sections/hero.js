@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Button } from "@ibrahimstudio/button";
 import { scrollToSection } from "@/utils/handler";
 import { FeatureCount } from "@/components/cards";
@@ -47,7 +46,3 @@ export function Hero({ sectionId }) {
     </header>
   );
 }
-
-Hero.propTypes = {
-  sectionId: PropTypes.string,
-};

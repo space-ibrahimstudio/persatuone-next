@@ -204,6 +204,17 @@
   height: var(--pixel-450);
 }
 
+.searchBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: var(--pixel-450);
+  gap: var(--pixel-5);
+}
+
 .hero {
   position: relative;
   background-image: url(/img/hero.webp);
@@ -608,6 +619,16 @@
   flex-direction: row;
   overflow-x: auto;
   align-items: flex-start;
+  justify-content: center;
+  gap: var(--pixel-10);
+  align-self: stretch;
+}
+
+.galleryCta {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
   gap: var(--pixel-10);
   align-self: stretch;

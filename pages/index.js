@@ -1,4 +1,5 @@
 import React from "react";
+import { fetchBlogList } from "@/utils/data";
 import { WhatsAppButton } from "@/components/buttons";
 import { Navbar } from "@/components/navbar";
 import { Hero } from "@/sections/hero";
@@ -15,7 +16,7 @@ import { Contact } from "@/sections/contact";
 import { Footer } from "@/components/footer";
 import styles from "@/styles/Home.module.css";
 
-export default function HomePage() {
+export default function HomePage({ bloglist }) {
   return (
     <React.Fragment>
       <WhatsAppButton />
@@ -30,7 +31,7 @@ export default function HomePage() {
         <Products sectionId="our-products" />
         <Certifications sectionId="certi-section" />
         <Gallery sectionId="gallery-showcase" />
-        <News sectionId="news-articles" />
+        <News sectionId="news-articles" bloglist={bloglist} />
         <Contact sectionId="contact-us" />
         <Footer componentId="home-footer" />
       </div>
@@ -38,12 +39,31 @@ export default function HomePage() {
   );
 }
 
-HomePage.getInitialProps = async () => {
+export async function getServerSideProps() {
+  try {
+    const data = await fetchBlogList();
+    if (data && data.data && data.data.length > 0) {
+      return {
+        props: {
+          bloglist: data.data,
+          title:
+            "Finest Cocoa Powder Supplier from Indonesia | Persatu.one - Komoditas Indonesia",
+          description:
+            "We are one of the leading COCOA POWDER manufacturer, SUPPLIER, and exporter from INDONESIA. We provide you the best quality of cocoa for your business!",
+          pagepath: "/",
+        },
+      };
+    }
+  } catch (error) {
+    console.error("Error fetching blog list data:", error);
+  }
+
   return {
-    title:
-      "Finest Cocoa Powder Supplier from Indonesia - Persatu.one - Komoditas Indonesia",
-    description:
-      "We are one of the leading COCOA POWDER manufacturer, SUPPLIER, and exporter from INDONESIA. We provide you the best quality of cocoa for your business!",
-    pagePath: "/",
+    props: {
+      bloglist: [],
+      title: "",
+      description: "",
+      pagepath: "",
+    },
   };
-};
+}

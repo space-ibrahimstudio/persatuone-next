@@ -1,6 +1,5 @@
 import React from "react";
 import { Button } from "@ibrahimstudio/button";
-import PropTypes from "prop-types";
 import styles from "@/styles/Home.module.css";
 
 export function Brands({ sectionId }) {
@@ -134,7 +133,3 @@ export function Brands({ sectionId }) {
     </React.Fragment>
   );
 }
-
-Brands.propTypes = {
-  sectionId: PropTypes.string,
-};

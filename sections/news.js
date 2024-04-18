@@ -1,38 +1,14 @@
-"use client";
-
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useRouter } from "next/navigation";
-import PropTypes from "prop-types";
-import { stripHtmlTags } from "@/utils/handler";
-import { fetchBlogList } from "@/utils/data";
 import { Button } from "@ibrahimstudio/button";
 import { NewsCard } from "@/components/cards";
 import styles from "@/styles/Home.module.css";
 
-export function News({ sectionId }) {
+export function News({ sectionId, bloglist }) {
   const router = useRouter();
-  const [newsList, setNewsList] = useState([]);
-
   const navigateDetail = (blog) => {
     router.push(`/news/${blog}`);
   };
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await fetchBlogList();
-        if (data && data.data && data.data.length > 0) {
-          setNewsList(data.data);
-        } else {
-          setNewsList([]);
-        }
-      } catch (error) {
-        console.error("Error fetching blog list data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
 
   return (
     <section
@@ -44,12 +20,12 @@ export function News({ sectionId }) {
         <h1 className={styles.factoryTitle}>News & Articles</h1>
       </div>
       <div className={styles.newsBody}>
-        {newsList.map((news, index) => (
+        {bloglist.map((news, index) => (
           <NewsCard
             key={index}
             imageUrl={news.thumbnail}
             cardTitle={news.title}
-            cardDesc={stripHtmlTags(news.content)}
+            cardDesc={news.content}
             cardDate={news.blogcreate}
             cardComments="0"
             onClick={() => navigateDetail(news.slug)}
@@ -65,7 +41,3 @@ export function News({ sectionId }) {
     </section>
   );
 }
-
-News.propTypes = {
-  sectionId: PropTypes.string,
-};

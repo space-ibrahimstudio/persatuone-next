@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import styles from "@/styles/Home.module.css";
 
 export function Certifications({ sectionId }) {
@@ -62,7 +61,3 @@ export function Certifications({ sectionId }) {
     </section>
   );
 }
-
-Certifications.propTypes = {
-  sectionId: PropTypes.string,
-};

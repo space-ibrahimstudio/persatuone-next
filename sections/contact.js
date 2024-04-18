@@ -1,7 +1,4 @@
-"use client";
-
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import { Input } from "@ibrahimstudio/input";
 import { Button } from "@ibrahimstudio/button";
 import * as ga from "@/lib/ga";
@@ -294,7 +291,3 @@ export function Contact({ sectionId }) {
     </section>
   );
 }
-
-Contact.propTypes = {
-  sectionId: PropTypes.string,
-};

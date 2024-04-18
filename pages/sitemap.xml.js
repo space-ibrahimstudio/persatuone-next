@@ -22,7 +22,8 @@ export const getServerSideProps = async ({ res }) => {
   sitemapXml += `<url><loc>${baseUrl}/news</loc><changefreq>weekly</changefreq><priority>0.8</priority><lastmod>${new Date().toISOString()}</lastmod></url>`;
 
   posts.forEach((post) => {
-    sitemapXml += `<url><loc>${baseUrl}/news/${post.slug}</loc><lastmod>${post.blogcreate}</lastmod></url>`;
+    const isoDate = new Date(post.blogcreate).toISOString();
+    sitemapXml += `<url><loc>${baseUrl}/news/${post.slug}</loc><lastmod>${isoDate}</lastmod></url>`;
   });
 
   sitemapXml += `</urlset>`;

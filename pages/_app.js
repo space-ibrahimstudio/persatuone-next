@@ -10,7 +10,7 @@ const baseUrl = "https://persatu.one";
 export default function App({ Component, pageProps }) {
   const router = useRouter();
 
-  const pageUrl = `${baseUrl}${pageProps?.pagePath}`;
+  const pageUrl = `${baseUrl}${pageProps?.pagepath}`;
   const strippedContent = pageProps?.description
     ? stripMetaContent(pageProps.description).substring(0, 160)
     : "";

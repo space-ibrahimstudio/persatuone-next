@@ -1,17 +1,22 @@
-"use client";
-
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import { albums } from "@/utils/data";
+import { Button } from "@ibrahimstudio/button";
 import { GalleryButton } from "@/components/buttons";
 import styles from "@/styles/Home.module.css";
 
 export function Gallery({ sectionId }) {
   const [selectedAlbum, setSelectedAlbum] = useState(albums[0]);
+  const [expanded, setExpanded] = useState(false);
 
   const handleAlbumClick = (album) => {
     setSelectedAlbum(album);
   };
+
+  const toggleExpand = () => {
+    setExpanded((prevExpand) => !prevExpand);
+  };
+
+  const displayLimit = expanded ? selectedAlbum.images.length : 8;
 
   return (
     <section
@@ -34,21 +39,28 @@ export function Gallery({ sectionId }) {
           ))}
         </div>
         <div className={styles.galleryList}>
-          {selectedAlbum.images.map((image, index) => (
+          {selectedAlbum.images.slice(0, displayLimit).map((image, index) => (
             <div className={styles.galleryImageWrap} key={index}>
               <img
                 className={styles.galleryImage}
                 src={`/img/albums/${image}.webp`}
+                loading="lazy"
                 alt={image}
               />
             </div>
           ))}
         </div>
+        <div className={styles.galleryCta}>
+          {selectedAlbum.images.length > 8 && (
+            <Button
+              id={expanded ? "less-gallery" : "expand-gallery"}
+              buttonText={expanded ? "Show Less" : "Display All Photos"}
+              radius="md"
+              onClick={toggleExpand}
+            />
+          )}
+        </div>
       </div>
     </section>
   );
 }
-
-Gallery.propTypes = {
-  sectionId: PropTypes.string,
-};

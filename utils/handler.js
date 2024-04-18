@@ -18,15 +18,8 @@ export const scrollToElement = (id) => {
   }
 };
 
-export const stripHtmlTags = (html) => {
-  if (typeof document === "undefined") {
-    return html;
-  }
-
-  const temp = document.createElement("div");
-  temp.innerHTML = html;
-
-  return temp.innerText || temp.textContent || "";
+export const stripHtmlTags = (html, max) => {
+  return html.replace(/<[^>]*>?/gm, "").substring(0, max);
 };
 
 export function stripMetaContent(html) {

@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import styles from "@/styles/buttons.module.css";
 
 export const ProductsButton = ({ buttonText, isActive, onClick }) => {
@@ -13,12 +12,6 @@ export const ProductsButton = ({ buttonText, isActive, onClick }) => {
   );
 };
 
-ProductsButton.propTypes = {
-  onClick: PropTypes.func,
-  buttonText: PropTypes.string,
-  isActive: PropTypes.bool,
-};
-
 export const GalleryButton = ({ buttonText, isActive, onClick }) => {
   return (
     <button
@@ -28,12 +21,6 @@ export const GalleryButton = ({ buttonText, isActive, onClick }) => {
       <b className={styles.galleryButtonText}>{buttonText}</b>
     </button>
   );
-};
-
-GalleryButton.propTypes = {
-  onClick: PropTypes.func,
-  buttonText: PropTypes.string,
-  isActive: PropTypes.bool,
 };
 
 export const WhatsAppButton = () => {
