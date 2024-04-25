@@ -1,10 +1,9 @@
-import { fetchBlogList } from "@/utils/data";
+import { getPostLists } from "@/utils/getpost";
 
 const Sitemap = () => {};
 
 export const getServerSideProps = async ({ res }) => {
-  const response = await fetchBlogList();
-  const posts = response.data;
+  const posts = await getPostLists();
 
   if (!posts) {
     res.setHeader("Content-Type", "text/xml");
@@ -13,7 +12,7 @@ export const getServerSideProps = async ({ res }) => {
     return { props: {} };
   }
 
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+  const baseUrl = process.env.appDomain;
 
   let sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>`;
   sitemapXml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;

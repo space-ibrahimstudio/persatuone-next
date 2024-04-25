@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Input } from "@ibrahimstudio/input";
 import { Button } from "@ibrahimstudio/button";
-import * as ga from "@/lib/ga";
+import * as ga from "@/utils/ga";
 import styles from "@/styles/Home.module.css";
 
 export function Contact({ sectionId }) {
@@ -91,7 +91,7 @@ export function Contact({ sectionId }) {
     if (validateStep()) {
       getAnalytics();
       try {
-        const response = await fetch("/api/sendEmail", {
+        const response = await fetch("/api/sendmail", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

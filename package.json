@@ -5,12 +5,16 @@
   "description": "Persatu.one using Next",
   "main": "server.js",
   "scripts": {
-    "dev": "node server.js",
-    "build": "next build",
+    "dev": "npm run clean && node server.js",
+    "build": "npm run clean && next build",
     "start": "NODE_ENV=production node server.js",
     "lint": "next lint",
+    "clean": "rimraf _next",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "author": "Ibrahim Space Studio",
+  "license": "MIT",
+  "homepage": "https://space.ibrahimstudio.co",
   "dependencies": {
     "@ibrahimstudio/button": "^1.1.5",
     "@ibrahimstudio/function": "^1.0.6",
@@ -27,6 +31,7 @@
   },
   "devDependencies": {
     "eslint": "^8",
-    "eslint-config-next": "14.0.4"
+    "eslint-config-next": "14.0.4",
+    "rimraf": "^5.0.5"
   }
 }

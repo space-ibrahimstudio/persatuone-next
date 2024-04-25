@@ -1,11 +1,12 @@
 import React, { Suspense, useEffect } from "react";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { stripMetaContent } from "@/utils/handler";
-import * as ga from "@/lib/ga";
+import * as ga from "@/utils/ga";
+import PageLayout from "@/components/layouts";
 import "@/styles/globals.css";
-import Head from "next/head";
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+const baseUrl = process.env.appDomain;
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
@@ -31,19 +32,18 @@ export default function App({ Component, pageProps }) {
   }, [router.events]);
 
   return (
-    <Suspense>
-      <Head>
-        <title>{pageProps?.title}</title>
-        <meta name="description" content={strippedContent} />
-        <meta property="og:url" content={pageUrl} />
-        <link rel="canonical" href={pageUrl} />
-        <link rel="icon" href="/favicon.ico" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={pageProps?.title} />
-        <meta property="og:description" content={strippedContent} />
-        <meta property="og:image" content={thumbnail} />
-      </Head>
-      <Component {...pageProps} />
-    </Suspense>
+    <PageLayout pageid={pageProps?.idpage || "persatu.one-official-website"}>
+      <Suspense>
+        <Head>
+          <meta property="og:url" content={pageUrl} />
+          <link rel="canonical" href={pageUrl} />
+          <meta property="og:image" content={thumbnail} />
+          <meta property="og:title" content={pageProps?.title} />
+          <meta property="og:description" content={strippedContent} />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </Head>
+        <Component {...pageProps} />
+      </Suspense>
+    </PageLayout>
   );
 }
