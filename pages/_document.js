@@ -8,27 +8,16 @@ export default class MyDocument extends Document {
           <meta charSet="UTF-8" />
           <meta name="author" content="Ibrahim Space Studio" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta
-            name="robots"
-            content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-          />
-          <meta
-            name="keywords"
-            content="Cocoa Powder, Indonesian Cocoa, Cocoa Export"
-          />
+          <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+          <meta name="keywords" content="Cocoa Powder, Indonesian Cocoa, Cocoa Export" />
           <link rel="icon" href="/favicon.ico" />
           <meta property="og:locale" content="en_US" />
           <meta property="og:type" content="website" />
           <meta property="og:image:width" content="920" />
           <meta property="og:image:height" content="470" />
-          <meta
-            property="og:site_name"
-            content="Persatu.one - Komoditas Indonesia"
-          />
-          <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.gAnalytics}`}
-          />
+          <meta property="og:site_name" content="Persatu.one - Komoditas Indonesia" />
+          <meta name="google-adsense-account" content="ca-pub-9744736888740959" />
+          <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.gAnalytics}`} />
           <script
             dangerouslySetInnerHTML={{
               __html: `

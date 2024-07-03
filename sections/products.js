@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import { ProductsButton } from "@/components/buttons";
 import { categories, productsData } from "@/utils/data";
 import { CocoaCard, CoffeeCard } from "@/components/cards";
@@ -8,7 +8,7 @@ export function Products({ sectionId }) {
   const [selectedCategory, setSelectedCategory] = useState(0);
 
   return (
-    <React.Fragment>
+    <Fragment>
       <section
         id={sectionId}
         section-view-id={sectionId}
@@ -80,6 +80,6 @@ export function Products({ sectionId }) {
           />
         </div>
       </section>
-    </React.Fragment>
+    </Fragment>
   );
 }

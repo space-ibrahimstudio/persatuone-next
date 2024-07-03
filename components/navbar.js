@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
-import PropTypes from "prop-types";
+import React, { Fragment, useState, useEffect, useRef } from "react";
 import { Button } from "@ibrahimstudio/button";
+import Link from "next/link";
 import { scrollToSection } from "@/utils/handler";
 import styles from "@/styles/Home.module.css";
 import menu from "@/styles/mobile-menu.module.css";
@@ -26,6 +26,13 @@ export function Navbar({ componentId }) {
 
   const closeMenu = () => {
     setMenuOpen(false);
+  };
+
+  const scrollToTop = () => {
+    const isBrowser = () => typeof window !== "undefined";
+
+    if (!isBrowser()) return;
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   useEffect(() => {
@@ -56,8 +63,6 @@ export function Navbar({ componentId }) {
         if (window.scrollY >= top && window.scrollY < top + height) {
           const id = section.getAttribute("section-view-id");
           setActiveTab(id);
-          const pageTitle = getPageTitle(id);
-          document.title = pageTitle;
           if (id !== "hero-section") {
             window.history.replaceState(null, null, `#${id}`);
           } else {
@@ -67,42 +72,19 @@ export function Navbar({ componentId }) {
       });
     };
 
-    const getPageTitle = (id) => {
-      switch (id) {
-        case "about-us":
-          return "Persatu.one | About Us";
-        case "our-brands":
-          return "Persatu.one | Our Brands";
-        case "our-products":
-          return "Persatu.one | Our Products";
-        case "gallery-showcase":
-          return "Persatu.one | Gallery Showcase";
-        case "news-articles":
-          return "Persatu.one | News & Articles";
-        case "contact-us":
-          return "Persatu.one | Contact Us";
-        default:
-          return "Persatu.one | Cocoa manufacturers and Coffee roaster from Indonesia";
-      }
-    };
-
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    <React.Fragment>
+    <Fragment>
       <nav
         id={componentId}
         className={`${styles.nav} ${isVisible ? styles.visible : ""}`}
       >
-        <div
-          className={styles.navLogo}
-          onClick={() => scrollToSection("hero-section")}
-        >
+        <div className={styles.navLogo} onClick={scrollToTop}>
           <img
             className={styles.logoIcon}
             loading="lazy"
@@ -111,54 +93,60 @@ export function Navbar({ componentId }) {
           />
         </div>
         <div className={styles.navMenu}>
-          <button
+          <Link
             className={`${styles.tabButton} ${
               activeTab === "hero-section" ? styles.active : ""
             }`}
-            onClick={() => scrollToSection("hero-section")}
+            href="#hero-section"
+            scroll={false}
           >
-            <div className={styles.tabButtonText}>Home</div>
-          </button>
-          <button
+            <b className={styles.tabButtonText}>Home</b>
+          </Link>
+          <Link
             className={`${styles.tabButton} ${
               activeTab === "about-us" ? styles.active : ""
             }`}
-            onClick={() => scrollToSection("about-us")}
+            href="#about-us"
+            scroll={false}
           >
-            <div className={styles.tabButtonText}>About Us</div>
-          </button>
-          <button
+            <b className={styles.tabButtonText}>About Us</b>
+          </Link>
+          <Link
             className={`${styles.tabButton} ${
               activeTab === "our-brands" ? styles.active : ""
             }`}
-            onClick={() => scrollToSection("our-brands")}
+            href="#our-brands"
+            scroll={false}
           >
-            <div className={styles.tabButtonText}>Brands</div>
-          </button>
-          <button
+            <b className={styles.tabButtonText}>Brands</b>
+          </Link>
+          <Link
             className={`${styles.tabButton} ${
               activeTab === "our-products" ? styles.active : ""
             }`}
-            onClick={() => scrollToSection("our-products")}
+            href="#our-products"
+            scroll={false}
           >
-            <div className={styles.tabButtonText}>Products</div>
-          </button>
-          <button
+            <b className={styles.tabButtonText}>Products</b>
+          </Link>
+          <Link
             className={`${styles.tabButton} ${
               activeTab === "gallery-showcase" ? styles.active : ""
             }`}
-            onClick={() => scrollToSection("gallery-showcase")}
+            href="#gallery-showcase"
+            scroll={false}
           >
-            <div className={styles.tabButtonText}>Gallery</div>
-          </button>
-          <button
+            <b className={styles.tabButtonText}>Gallery</b>
+          </Link>
+          <Link
             className={`${styles.tabButton} ${
               activeTab === "news-articles" ? styles.active : ""
             }`}
-            onClick={() => scrollToSection("news-articles")}
+            href="#news-articles"
+            scroll={false}
           >
-            <div className={styles.tabButtonText}>Articles</div>
-          </button>
+            <b className={styles.tabButtonText}>Articles</b>
+          </Link>
         </div>
         <div style={{ display: "flex", flexDirection: "row", gap: "15px" }}>
           <Button
@@ -190,7 +178,7 @@ export function Navbar({ componentId }) {
           onClose={closeMenu}
         />
       )}
-    </React.Fragment>
+    </Fragment>
   );
 }
 
@@ -245,7 +233,7 @@ const MobileMenu = ({ componentId, activeTab, onClose }) => {
   }, [ref, setIsClosing]);
 
   return (
-    <React.Fragment>
+    <Fragment>
       <div
         ref={ref}
         className={`${menu.mobileMenu} ${isClosing ? menu.close : ""}`}
@@ -362,6 +350,6 @@ const MobileMenu = ({ componentId, activeTab, onClose }) => {
           backgroundColor: "var(--color-black-50)",
         }}
       ></div>
-    </React.Fragment>
+    </Fragment>
   );
 };

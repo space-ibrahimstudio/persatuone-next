@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Button } from "@ibrahimstudio/button";
 import styles from "@/styles/Home.module.css";
 
@@ -24,7 +24,7 @@ export function Brands({ sectionId }) {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <section
         id={sectionId}
         section-view-id={sectionId}
@@ -130,6 +130,6 @@ export function Brands({ sectionId }) {
           alt="Celebes Coffee (CELCO)"
         />
       </section>
-    </React.Fragment>
+    </Fragment>
   );
 }
