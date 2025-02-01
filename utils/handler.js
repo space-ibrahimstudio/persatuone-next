@@ -22,6 +22,6 @@ export const stripHtmlTags = (html, max) => {
   return html.replace(/<[^>]*>?/gm, "").substring(0, max);
 };
 
-export function stripMetaContent(html) {
+export const stripMetaContent = (html) => {
   return html.replace(/<[^>]*>?/gm, "");
-}
+};

@@ -1,9 +1,4 @@
-export const categories = [
-  "Low Fat Series",
-  "Standard Series",
-  "Premium Series",
-  "Black Series",
-];
+export const categories = ["Low Fat Series", "Standard Series", "Premium Series", "Black Series"];
 
 export const productsData = [
   [

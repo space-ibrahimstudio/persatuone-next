@@ -11,53 +11,31 @@ export function News({ sectionId }) {
   const router = useRouter();
   const [blogpost, setBlogpost] = useState([]);
 
-  const navigateDetail = (blog) => {
-    router.push(`/news/${blog}`);
+  const navigateDetail = (blog) => router.push(`/news/${blog}`);
+  const fetchPosts = async () => {
+    try {
+      const response = await axios.get("api/ankabut?scope=main&endpoint=viewblog");
+      setBlogpost(response.data.data);
+    } catch (error) {
+      console.error("Error occurred during fetch posts data:", error);
+    }
   };
 
   useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const response = await axios.get(
-          "api/ankabut?scope=main&endpoint=viewblog"
-        );
-        setBlogpost(response.data.data);
-      } catch (error) {
-        console.error("Error occurred during fetch posts data:", error);
-      }
-    };
-
     fetchPosts();
   }, []);
 
   return (
-    <section
-      id={sectionId}
-      section-view-id={sectionId}
-      className={styles.certifications}
-    >
+    <section id={sectionId} section-view-id={sectionId} className={styles.certifications}>
       <div className={styles.articlesHeading}>
         <h1 className={styles.factoryTitle}>News & Articles</h1>
       </div>
       <div className={styles.newsBody}>
         {blogpost.map((post, index) => (
-          <NewsCard
-            key={index}
-            imageUrl={post.thumbnail}
-            cardTitle={post.title}
-            cardDesc={post.content}
-            cardDate={post.blogcreate}
-            cardComments="0"
-            onClick={() => navigateDetail(post.slug)}
-          />
+          <NewsCard key={index} imageUrl={post.thumbnail} cardTitle={post.title} cardDesc={post.content} cardDate={post.blogcreate} cardComments="0" onClick={() => navigateDetail(post.slug)} />
         ))}
       </div>
-      <Button
-        id="view-all-news"
-        buttonText="View All News"
-        radius="md"
-        onClick={() => router.push("/news")}
-      />
+      <Button id="view-all-news" buttonText="View All News" radius="md" onClick={() => router.push("/news")} />
     </section>
   );
 }

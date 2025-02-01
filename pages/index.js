@@ -32,21 +32,6 @@ export default function HomePage({ pagedata }) {
 }
 
 export async function getStaticProps() {
-  const documentdata = {
-    id: "persatu.one-home",
-    title:
-      "Finest Cocoa Powder Supplier from Indonesia | Persatu.one - Komoditas Indonesia",
-    description:
-      "We are one of the leading COCOA POWDER manufacturer, SUPPLIER, and exporter from INDONESIA. We provide you the best quality of cocoa for your business!",
-  };
-
-  return {
-    props: {
-      idpage: documentdata.id,
-      title: documentdata.title,
-      description: documentdata.description,
-      pagepath: "/",
-      pagedata: documentdata,
-    },
-  };
+  const documentdata = { id: "persatu.one-home", title: "Finest Cocoa Powder Supplier from Indonesia | Persatu.one - Komoditas Indonesia", description: "We are one of the leading COCOA POWDER manufacturer, SUPPLIER, and exporter from INDONESIA. We provide you the best quality of cocoa for your business!" };
+  return { props: { idpage: documentdata.id, title: documentdata.title, description: documentdata.description, pagepath: "/", pagedata: documentdata } };
 }

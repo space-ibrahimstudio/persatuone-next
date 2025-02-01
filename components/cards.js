@@ -12,12 +12,7 @@ export const FeatureCard = ({ cardText, iconSrc }) => {
   return (
     <section className={ftr.featureCard}>
       <div className={ftr.featureCardTop}>
-        <img
-          className={ftr.starIcon}
-          loading="lazy"
-          alt={cardText}
-          src={iconSrc}
-        />
+        <img className={ftr.starIcon} loading="lazy" alt={cardText} src={iconSrc} />
       </div>
       <div className={ftr.featureCardDesc}>
         <h1 className={ftr.featureCardText}>{cardText}</h1>
@@ -30,12 +25,7 @@ export const FactoryCard = ({ variant, cardTitle, cardDesc, imageUrl }) => {
   if (variant === "revert") {
     return (
       <section className={fctr.factoryCard}>
-        <img
-          className={fctr.factoryCardImage}
-          src={imageUrl}
-          alt={cardTitle}
-          loading="lazy"
-        />
+        <img className={fctr.factoryCardImage} src={imageUrl} alt={cardTitle} loading="lazy" />
         <div className={fctr.factoryCardHeading}>
           <h1 className={fctr.factoryCardTitle}>{cardTitle}</h1>
           <p className={fctr.factoryCardDesc}>{cardDesc}</p>
@@ -49,36 +39,17 @@ export const FactoryCard = ({ variant, cardTitle, cardDesc, imageUrl }) => {
           <h1 className={fctr.factoryCardTitle}>{cardTitle}</h1>
           <p className={fctr.factoryCardDesc}>{cardDesc}</p>
         </div>
-        <img
-          className={fctr.factoryCardImage}
-          src={imageUrl}
-          alt={cardTitle}
-          loading="lazy"
-        />
+        <img className={fctr.factoryCardImage} src={imageUrl} alt={cardTitle} loading="lazy" />
       </section>
     );
   }
 };
 
-export const CocoaCard = ({
-  variant,
-  cardTitle,
-  cardDesc,
-  cardCta,
-  imageUrl,
-}) => {
+export const CocoaCard = ({ variant, cardTitle, cardDesc, cardCta, imageUrl }) => {
   if (variant === "revert") {
     return (
-      <section
-        className={cocoa.productCard}
-        style={{ flexWrap: "wrap-reverse" }}
-      >
-        <img
-          className={cocoa.productCardImage1}
-          src={imageUrl}
-          alt={cardDesc}
-          loading="lazy"
-        />
+      <section className={cocoa.productCard} style={{ flexWrap: "wrap-reverse" }}>
+        <img className={cocoa.productCardImage1} src={imageUrl} alt={cardDesc} loading="lazy" />
         <div className={cocoa.productCardHeading}>
           <h1 className={cocoa.productCardTitle}>{cardTitle}</h1>
           <p className={cocoa.productCardDesc}>{cardDesc}</p>
@@ -98,12 +69,7 @@ export const CocoaCard = ({
             {cardCta}
           </p>
         </div>
-        <img
-          className={cocoa.productCardImage}
-          src={imageUrl}
-          alt={cardDesc}
-          loading="lazy"
-        />
+        <img className={cocoa.productCardImage} src={imageUrl} alt={cardDesc} loading="lazy" />
       </section>
     );
   }
@@ -112,37 +78,20 @@ export const CocoaCard = ({
 export const CoffeeCard = ({ imageUrl, cardTitle }) => {
   return (
     <section className={coffee.coffeeCard}>
-      <img
-        className={coffee.coffeeCardImage}
-        src={imageUrl}
-        alt={cardTitle}
-        loading="lazy"
-      />
+      <img className={coffee.coffeeCardImage} src={imageUrl} alt={cardTitle} loading="lazy" />
       <h1 className={coffee.coffeeCardText}>{cardTitle}</h1>
     </section>
   );
 };
 
-export const NewsCard = ({
-  cardTitle,
-  cardDesc,
-  cardDate,
-  cardComments,
-  imageUrl,
-  onClick,
-}) => {
+export const NewsCard = ({ cardTitle, cardDesc, cardDate, cardComments, imageUrl, onClick }) => {
   return (
     <section className={news.newsCard} onClick={onClick}>
       <div className={news.newsCardImage}>
         <div className={news.newsCardDate}>
-          <h6 className={news.newsCardDateText}>
-            {formatDate(cardDate, "en-gb")}
-          </h6>
+          <h6 className={news.newsCardDateText}>{formatDate(cardDate, "en-gb")}</h6>
         </div>
-        <div
-          className={news.newsCardImageSrc}
-          style={{ backgroundImage: `url(${imageUrl})` }}
-        ></div>
+        <div className={news.newsCardImageSrc} style={{ backgroundImage: `url(${imageUrl})` }}></div>
       </div>
       <div className={news.newsCardBody}>
         <div className={news.newsCardHeading}>
@@ -162,17 +111,13 @@ export const FeatureCount = ({ finalCount, units, description }) => {
     const duration = 1000;
     const increment = finalCount / (duration / 100);
     let currentCount = 0;
-
     const interval = setInterval(() => {
       currentCount += increment;
       if (currentCount >= finalCount) {
         setCount(finalCount);
         clearInterval(interval);
-      } else {
-        setCount(Math.ceil(currentCount));
-      }
+      } else setCount(Math.ceil(currentCount));
     }, 100);
-
     return () => clearInterval(interval);
   }, [finalCount]);
 

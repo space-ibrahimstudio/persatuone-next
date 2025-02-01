@@ -16,7 +16,6 @@ export const getServerSideProps = async ({ res }) => {
 
   let sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>`;
   sitemapXml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
-
   sitemapXml += `<url><loc>${baseUrl}</loc><changefreq>daily</changefreq><priority>1</priority><lastmod>${new Date().toISOString()}</lastmod></url>`;
   sitemapXml += `<url><loc>${baseUrl}/news</loc><changefreq>weekly</changefreq><priority>0.8</priority><lastmod>${new Date().toISOString()}</lastmod></url>`;
 

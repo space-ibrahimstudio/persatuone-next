@@ -12,23 +12,13 @@ export default function App({ Component, pageProps }) {
   const router = useRouter();
 
   const pageUrl = `${baseUrl}${pageProps?.pagepath}`;
-  const strippedContent = pageProps?.description
-    ? stripMetaContent(pageProps.description).substring(0, 160)
-    : "";
-
-  const thumbnail = pageProps?.thumbnail
-    ? pageProps.thumbnail
-    : `${baseUrl}/img/img-12.webp`;
+  const strippedContent = pageProps?.description ? stripMetaContent(pageProps.description).substring(0, 160) : "";
+  const thumbnail = pageProps?.thumbnail ? pageProps.thumbnail : `${baseUrl}/img/img-12.webp`;
 
   useEffect(() => {
-    const handleRouteChange = (url) => {
-      ga.pageview(url);
-    };
-
+    const handleRouteChange = (url) => ga.pageview(url);
     router.events.on("routeChangeComplete", handleRouteChange);
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
+    return () => router.events.off("routeChangeComplete", handleRouteChange);
   }, [router.events]);
 
   return (

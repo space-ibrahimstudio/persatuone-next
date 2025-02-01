@@ -9,29 +9,17 @@ import styles from "@/styles/Home.module.css";
 
 export default function NewsDetail({ pagedata, postdata, postlist }) {
   const router = useRouter();
-  const navigateDetail = (blog) => {
-    router.push(`/news/${blog}`);
-  };
+  const navigateDetail = (blog) => router.push(`/news/${blog}`);
 
   return (
     <Fragment>
       <SEO title={pagedata.title} description={pagedata.description} />
-      <img
-        className={styles.blogBanner}
-        loading="lazy"
-        src={postdata.thumbnail}
-        alt={pagedata.title}
-      />
+      <img className={styles.blogBanner} loading="lazy" src={postdata.thumbnail} alt={pagedata.title} />
       <div className={styles.about}>
         <div className={styles.aboutHeading}>
           <h1 className={styles.aboutTitle}>{toTitleCase(postdata.title)}</h1>
-          <h2 className={styles.aboutSubtitle}>
-            Posted at {formatDate(postdata.blogcreate, "en-gb")}
-          </h2>
-          <div
-            dangerouslySetInnerHTML={{ __html: postdata.content }}
-            className={styles.aboutDesc}
-          />
+          <h2 className={styles.aboutSubtitle}>Posted at {formatDate(postdata.blogcreate, "en-gb")}</h2>
+          <div dangerouslySetInnerHTML={{ __html: postdata.content }} className={styles.aboutDesc} />
         </div>
       </div>
       <section className={styles.certifications}>
@@ -40,15 +28,7 @@ export default function NewsDetail({ pagedata, postdata, postlist }) {
         </div>
         <div className={styles.newsBody}>
           {postlist.map((post, index) => (
-            <NewsCard
-              key={index}
-              imageUrl={post.thumbnail}
-              cardTitle={post.title}
-              cardDesc={post.content}
-              cardDate={post.blogcreate}
-              cardComments="0"
-              onClick={() => navigateDetail(post.slug)}
-            />
+            <NewsCard key={index} imageUrl={post.thumbnail} cardTitle={post.title} cardDesc={post.content} cardDate={post.blogcreate} cardComments="0" onClick={() => navigateDetail(post.slug)} />
           ))}
         </div>
       </section>
@@ -58,56 +38,24 @@ export default function NewsDetail({ pagedata, postdata, postlist }) {
 
 export async function getStaticPaths() {
   const url = `${process.env.apiDomain}/main/viewblog`;
-  const data = await axios.get(url, {
-    headers: { "Content-Type": "multipart/form-data" },
-  });
-
+  const data = await axios.get(url, { headers: { "Content-Type": "multipart/form-data" } });
   const response = data.data;
-  const postslugs = response.data.map((post) => ({
-    params: { blog: post.slug },
-  }));
-
-  return {
-    paths: postslugs,
-    fallback: "blocking",
-  };
+  const postslugs = response.data.map((post) => ({ params: { blog: post.slug } }));
+  return { paths: postslugs, fallback: "blocking" };
 }
 
 export async function getStaticProps({ params }) {
   const { blog } = params;
-
   try {
     const postlist = await getPostLists();
     const blogid = postlist.find((post) => post.slug === blog).idblog;
-
-    if (blogid) {
-      try {
-        const postdetail = await getPostDetail(blogid);
-        const documentdata = {
-          id: `persatu.one-post-${blogid}`,
-          title: `${toTitleCase(
-            postdetail.title
-          )} | Persatu.one - Komoditas Indonesia`,
-          description: postdetail.content,
-        };
-
-        return {
-          props: {
-            idpage: documentdata.id,
-            title: documentdata.title,
-            description: documentdata.description,
-            pagepath: `/news/${postdetail.slug}`,
-            thumbnail: postdetail.thumbnail,
-            pagedata: documentdata,
-            postdata: postdetail,
-            postlist: postlist,
-          },
-        };
-      } catch (error) {
-        console.error("Error fetching blog detail data:", error);
-        return { props: {} };
-      }
-    } else {
+    if (!blogid) return { props: {} };
+    try {
+      const postdetail = await getPostDetail(blogid);
+      const documentdata = { id: `persatu.one-post-${blogid}`, title: `${toTitleCase(postdetail.title)} | Persatu.one - Komoditas Indonesia`, description: postdetail.content };
+      return { props: { idpage: documentdata.id, title: documentdata.title, description: documentdata.description, pagepath: `/news/${postdetail.slug}`, thumbnail: postdetail.thumbnail, pagedata: documentdata, postdata: postdetail, postlist: postlist } };
+    } catch (error) {
+      console.error("Error fetching blog detail data:", error);
       return { props: {} };
     }
   } catch (error) {
