@@ -89,14 +89,14 @@ export function Contact({ sectionId }) {
         </div>
         <form className={styles.contactForm} onSubmit={handleSubmit}>
           <div className={styles.inputWrapper}>
-            <Input id="client-name" name="name" type="text" placeholder="Your Name" isLabeled={false} value={inputData.name} onChange={handleInputChange} isRequired />
-            <Input id="client-email" name="email" type="email" placeholder="Your Email" isLabeled={false} value={inputData.email} onChange={handleInputChange} isRequired />
+            <Input id="client-name" name="name" placeholder="Your Name" labeled={false} value={inputData.name} onChange={handleInputChange} required />
+            <Input id="client-email" name="email" type="email" placeholder="Your Email" labeled={false} value={inputData.email} onChange={handleInputChange} required />
           </div>
           <div className={styles.inputWrapper}>
-            <Input id="client-phone" name="phone" type="tel" placeholder="Phone Number" isLabeled={false} value={inputData.phone} onChange={handleInputChange} isRequired />
-            <Input id="client-subject" name="subject" type="text" placeholder="Subject" isLabeled={false} value={inputData.subject} onChange={handleInputChange} isRequired />
+            <Input id="client-phone" name="phone" type="tel" placeholder="Phone Number" labeled={false} value={inputData.phone} onChange={handleInputChange} required />
+            <Input id="client-subject" name="subject" type="text" placeholder="Subject" labeled={false} value={inputData.subject} onChange={handleInputChange} required />
           </div>
-          <Input id="client-message" variant="textarea" name="message" placeholder="Write message here ..." isLabeled={false} value={inputData.message} onChange={handleInputChange} isRequired rows={3} />
+          <Input id="client-message" variant="textarea" name="message" placeholder="Write message here ..." labeled={false} value={inputData.message} onChange={handleInputChange} isRequired rows={3} />
           {errors && <p className={styles.errorMsg}>{errors.name || errors.phone || errors.email || errors.subject || errors.message}</p>}
           {success && <p className={styles.errorMsg}>Message sent successfully.</p>}
           <Button id="submit-messages" type="submit" bgColor="var(--color-darkred)" buttonText="Send Messages" radius="md" />

@@ -12,7 +12,7 @@ export const getServerSideProps = async ({ res }) => {
     return { props: {} };
   }
 
-  const baseUrl = process.env.APP_DOMAIN;
+  const baseUrl = process.env.appDomain;
 
   let sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>`;
   sitemapXml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;

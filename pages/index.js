@@ -25,7 +25,7 @@ export default function HomePage({ pagedata }) {
       <Products sectionId="our-products" />
       <Certifications sectionId="certi-section" />
       <Gallery sectionId="gallery-showcase" />
-      <News sectionId="news-articles" />
+      {/* <News sectionId="news-articles" /> */}
       <Contact sectionId="contact-us" />
     </Fragment>
   );

@@ -1,5 +1,5 @@
 export const pageview = (url) => {
-  window.gtag("config", process.env.G_ANALYTICS, {
+  window.gtag("config", process.env.gAnalytics, {
     page_path: url,
   });
 };

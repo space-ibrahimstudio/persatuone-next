@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseUrl = process.env.API_DOMAIN;
+const baseUrl = process.env.apiDomain;
 
 export async function getPostLists() {
   try {

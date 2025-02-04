@@ -79,9 +79,9 @@ export function Navbar({ componentId }) {
           <Link className={`${styles.tabButton} ${activeTab === "gallery-showcase" ? styles.active : ""}`} href="#gallery-showcase" scroll={false}>
             <b className={styles.tabButtonText}>Gallery</b>
           </Link>
-          <Link className={`${styles.tabButton} ${activeTab === "news-articles" ? styles.active : ""}`} href="#news-articles" scroll={false}>
+          {/* <Link className={`${styles.tabButton} ${activeTab === "news-articles" ? styles.active : ""}`} href="#news-articles" scroll={false}>
             <b className={styles.tabButtonText}>Articles</b>
-          </Link>
+          </Link> */}
         </div>
         <div style={{ display: "flex", flexDirection: "row", gap: "15px" }}>
           <Button id="contact-nav" size="sm" radius="md" buttonText="Contact Us" bgColor={isVisible ? "var(--color-darkred)" : "var(--color-red)"} onClick={() => scrollToSection("contact-us")} />

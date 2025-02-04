@@ -6,7 +6,7 @@ import * as ga from "@/utils/ga";
 import PageLayout from "@/components/layouts";
 import "@/styles/globals.css";
 
-const baseUrl = process.env.APP_DOMAIN;
+const baseUrl = process.env.appDomain;
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
