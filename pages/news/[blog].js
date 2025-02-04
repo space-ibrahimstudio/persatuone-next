@@ -37,7 +37,7 @@ export default function NewsDetail({ pagedata, postdata, postlist }) {
 }
 
 export async function getStaticPaths() {
-  const url = `${process.env.apiDomain}/main/viewblog`;
+  const url = `${process.env.API_DOMAIN}/main/viewblog`;
   const data = await axios.get(url, { headers: { "Content-Type": "multipart/form-data" } });
   const response = data.data;
   const postslugs = response.data.map((post) => ({ params: { blog: post.slug } }));

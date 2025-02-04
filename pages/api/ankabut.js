@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const apiUrl = process.env.apiDomain;
+const apiUrl = process.env.API_DOMAIN;
 
 export default async function handler(req, res) {
   if (req.method === "GET") {

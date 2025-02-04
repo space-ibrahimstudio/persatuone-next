@@ -17,14 +17,14 @@ export default class MyDocument extends Document {
           <meta property="og:image:height" content="470" />
           <meta property="og:site_name" content="Persatu.one - Komoditas Indonesia" />
           <meta name="google-adsense-account" content="ca-pub-9744736888740959" />
-          <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.gAnalytics}`} />
+          <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.G_ANALYTICS}`} />
           <script
             dangerouslySetInnerHTML={{
               __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${process.env.gAnalytics}', {
+            gtag('config', '${process.env.G_ANALYTICS}', {
               page_path: window.location.pathname,
             });
           `,
